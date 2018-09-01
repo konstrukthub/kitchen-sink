@@ -1,0 +1,169 @@
+/// Adds styles for a pagination container. Apply this to a `<ul>`.
+@mixin pagination-container (
+  $margin: $pagination-margin,
+  $font-size: $pagination-font-size,
+  $line-height: $pagination-line-height,
+  $spacing: $pagination-item-spacing,
+  $radius: $pagination-radius,
+  $color: $pagination-item-color,
+  $padding: $pagination-item-padding,
+  $background-hover: $pagination-item-background-hover,
+  $border: $pagination-item-border
+) {
+  @include clearfix;
+  margin: $margin;
+
+  // List item
+  li {
+    border-radius: $radius;
+    display: inline-block;
+    font-size: 0;
+    line-height: $line-height;
+    position: relative;
+    vertical-align: middle;
+
+    > * {
+      font-size: $font-size;
+    }
+
+    @if $global-text-direction == ltr {
+      margin-#{$global-right}: $spacing;
+
+      &:last-child {
+        margin-#{$global-right}: 0;
+      }
+    }
+    @else {
+      margin-#{$global-left}: $spacing;
+
+      &:first-child {
+        margin-#{$global-left}: 0;
+      }
+    }
+
+    &.current {
+      border-radius: $radius;
+    }
+
+    &.pagination-next,
+    &.pagination-previous,
+    &.pagination-first,
+    &.pagination-last {
+      a > *,
+      button > * {
+        border-color: transparent;
+      }
+    }
+  }
+
+  // Page links
+  a,
+  button {
+    > * {
+      border: $border;
+      border-radius: $radius;
+      color: $color;
+      display: block;
+      position: relative;
+      transition: all $transition-speed-fast;
+    }
+
+    &:hover > * {
+      background: $background-hover;
+      border-color: $pagination-item-border-color-hover;
+      color: $pagination-item-color-hover;
+    }
+  }
+}
+
+@mixin pagination-sizes() {
+  @each $intent, $value in $pagination-item-sizes {
+    [data-whatintent='#{$intent}'] .pagination li {
+      min-width: get-side(map-get($value, 'size'), left);
+      height: get-side(map-get($value, 'size'), top);
+      margin: map-get($value, 'li-margin');
+
+      &.current {
+        padding: map-get($value, 'a-padding');
+        & > * {
+          $height: get-side(map-get($value, 'size'), top) - get-side(map-get($value, 'a-padding'), top) - get-side(map-get($value, 'a-padding'), bottom);
+
+          background: $pagination-item-background-current;
+          color: $pagination-item-color-current;
+          cursor: default;
+          display: block;
+          height: $height;
+          padding: 0;
+          line-height: $height - get-border-value($pagination-item-border, width) * 2;
+        }
+      }
+
+      &.disabled {
+        color: $pagination-item-color-disabled;
+        cursor: not-allowed;
+      }
+
+      > * {
+        display: block;
+        height: 100%;
+        padding: map-get($value, 'a-padding');
+        > * {
+          $height: get-side(map-get($value, 'size'), top) - get-side(map-get($value, 'a-padding'), top) - get-side(map-get($value, 'a-padding'), bottom);
+          height: $height;
+          line-height: $height - get-border-value($pagination-item-border, width) * 2;
+          padding: map-get($value, 'inner-padding');
+          //- get-border-value($pagination-item-border, width) * 2
+        }
+      }
+    }
+  }
+}
+
+/// Adds styles for the current pagination item. Apply this to an `<a>`.
+
+@mixin foundation-pagination {
+  .pagination {
+    @include pagination-container;
+  }
+
+  @include pagination-sizes;
+
+  @if $pagination-arrows {
+    @each $name, $props in $pagination-arrows-defs {
+      $icon-width: get-side(map-get(map-get($pagination-arrows-defs, $name), size), top);
+      @each $intent, $value in $pagination-item-sizes {
+        [data-whatintent='#{$intent}'] .pagination li.pagination-#{$name} {
+          $bg-pos: get-side(map-get($value, 'inner-padding'), #{map-get($props, 'padding-side')}) + get-side(map-get($value, 'a-padding'), #{map-get($props, 'padding-side')});
+          background-image: sassvg(map-get($props, name), transparent, transparent, map-get($props, color));
+          background-position: center #{map-get($props, 'padding-side')} $bg-pos;
+          background-repeat: no-repeat;
+          background-size: map-get($props, size);
+
+          &:hover {
+            background-image: sassvg(map-get($props, name), transparent, transparent, map-get($props, color-hover));
+            background-position: center #{map-get($props, 'padding-side')} $bg-pos;
+            background-repeat: no-repeat;
+            background-size: map-get($props, size);
+          }
+
+          &.disabled {
+            background-image: sassvg(map-get($props, name), transparent, transparent, $pagination-item-color-disabled);
+
+            &:hover {
+              background-image: sassvg(map-get($props, name), transparent, transparent, $pagination-item-color-disabled);
+            }
+          }
+
+          * > * {
+            @if ($name == 'first' or $name == 'last') {
+              width: calc(100% - #{(get-side(map-get($value, 'a-padding'), left) + get-side(map-get($value, 'a-padding'), right))});
+            }
+            @else {
+              padding-#{map-get($props, 'padding-side')}: get-side(map-get($value, 'inner-padding'), #{map-get($props, 'padding-side')}) * 2 + $icon-width;
+            }
+          }
+        }
+      }
+    }
+  }
+}

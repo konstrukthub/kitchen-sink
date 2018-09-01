@@ -3,9 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Style Guide | Your Brand</title>
+    <title>Style Guide | Konstrukt</title>
     <link rel="stylesheet" href="assets/css/app.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/color-brewer.min.css">
+
+    <!--color-brewer-->
+    <!--foundation-->
 
     <!-- Style guide-specific CSS goes here. -->
     <style>
@@ -18,10 +21,15 @@
 
     /* This styles code blocks used for examples. */
     .ss-code code {
+      font-size: 80%;
       display: block;
       padding: 1rem;
       overflow-x: scroll;
       margin-bottom: 1.5rem;
+    }
+
+    code {
+      font-size: 80%;
     }
 
     /* This styles the example rows used in the grid documentation. */
@@ -57,7 +65,7 @@
 
       .sg-header {
         background: #eee;
-        padding: 2rem;
+        padding: 2rem 0;
       }
 
       .grid-container {
@@ -65,7 +73,7 @@
       }
 
       .sg-side-menu {
-        margin-left: 1rem;
+        margin-right: 1rem;
       }
 
       .grid-container.padded {
@@ -81,7 +89,7 @@
       }
 
       .sg-side-menu a:focus {
-        background: #1468a0;
+        background: #2962FF;
         color: #fff;
       }
 
@@ -96,18 +104,16 @@
 
     <header class="sg-header" id="sg-header">
       <div class="grid-container">
-        <h1>Style Guide</h1>
-        <p class="lead">This style guide was built with Foundation for Sites. For more information on how to use this responsive front-end framework, check out the documentation, get help from the Foundation community, or request immediate technical support.</p>
+        <h1>Konstrukt Kitchen Sink</h1>
+        <p class="lead">This style guide was built under Foundation for Sites. We love Foundation. For more information on how to use this responsive front-end framework, check out the documentation.</p>
         <a href="http://foundation.zurb.com/docs/" class="button">Visit the Docs</a>
-        <a href="http://foundation.zurb.com/forum/" class="secondary button">Foundation Forum</a>
-        <a href="http://foundation.zurb.com/business/business-support.html" class="secondary button">Technical Support</a>
       </div>
     </header>
 
     <div class="grid-container padded">
       <div class="grid-x grid-margin-x" data-sticky-container>
 
-        <div class="large-3 medium-4 cell">
+        <div class="large-3 medium-4">
           <div class="sticky" data-sticky data-top-anchor="sg-header:bottom">
             <ul class="vertical menu sg-side-menu" data-smooth-scroll data-animation-easing="swing">
               

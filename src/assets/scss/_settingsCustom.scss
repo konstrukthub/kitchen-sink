@@ -1,0 +1,179 @@
+$container-widths: (
+  small: rem-calc(1200),
+  xxlarge: rem-calc(1440)
+);
+
+$container-padding: (
+  small: 0 rem-calc(8),
+  tablet-portrait: 0
+);
+
+// paragraph sizes
+$p-sizes: (
+  small: (
+    'body' : ('fs' : 16),
+    'p' : ('fs': 16, 'mt': 0, 'mb': 1em, 'lh': 1.5)
+  ),
+  tablet-portrait: (
+    'body' : ('fs' : 18),
+    'p' : ('fs': 18)
+  ),
+  xlarge: (
+    'body' : ('fs' : 20),
+    'p' : ('fs': 20)
+  )
+);
+
+//custom accordion
+//custom:
+$accordion-bg-img-size: 16px 26px; //24px default, 26x16 for arrows
+$accordion-icon-bg-img: $gray-50;
+$accordion-icon-bg-img-hover: $black;
+
+// custom button
+$custom-button-sizes: (
+  small: (
+    'default': ('fs': 13px, 'lh': 16px, 'padding': 11px 15px),
+    'tiny': ('fs': 10px, 'lh': 1em, 'padding': 3px 11px, 'text-transform': uppercase),
+    'small': ('fs': 11px, 'lh': 12px, 'padding': 7px 15px, 'text-transform': uppercase),
+    'large': ('fs': 1em, 'padding': 17px 23px)
+  ),
+  tablet-portrait: (
+    'default': ('fs': 14px, 'lh': 16px, 'padding': 11px 15px),
+    'tiny': ('padding': 3px 11px),
+    'small': ('padding': 7px 15px),
+    'large': ('fs': 1em, 'padding': 16px 23px)
+  ),
+  xlarge: (
+    'default': ('fs': 16px, 'lh': 16px, 'padding': 11px 15px),
+    'tiny': ('fs': 11px, 'lh': 12px, 'padding': 3px 11px),
+    'small': ('fs': 12px, 'padding': 7px 15px, 'text-transform': none),
+    'large': ('fs': 1em, 'padding': 15px 23px)
+  )
+);
+
+// square button size width x height.
+$square-button-size: 44px;
+
+// Icon buttons
+// icon name - svg icon to take from default - same as class name  + .svg
+// Size: size of icon in px, square sizes need only one value, other are width height default 24 x 24
+// offset: distance from the center, auto for center default 'auto'
+// hover-color icon hover color, default $black
+// e.g. 'icon-close': ('name': icon-close-24, 'size': 24px 24px, 'offset': auto 10px auto auto, 'color': $gray-50)
+$square-button-icons: (
+  'icon-close': ('name': icon-close-24, 'color': $gray-50, 'hover-color': $black),
+  'icon-close-callout': ('name': icon-close-24, 'offset': 20px 20px auto auto, 'color': $gray-50, 'hover-color': $black),
+  'icon-close-small': ('name': icon-close-12, 'size': 12px, 'color': $gray-50, 'hover-color': $black),
+  'icon-hamburger': ('name': icon-hamburger-20x14, 'size': 14px 20px, 'offset': auto auto auto 0, 'color': $gray-50, 'hover-color': $black)
+) !default;
+
+$button-icons-color: $dark-gray;
+$button-icons-hover-color: $black;
+
+// Offcanvas & Drilldown
+// ---------------------
+$close-section-height: get-side($square-button-size, top);
+$drilldown-menu-font-size: (
+  small: 16px
+);
+$drilldown-item-color: $body-font-color;
+$drilldown-item-color-hover: $drilldown-item-color;
+$drilldown-item-background-color: $drilldown-background;
+$drilldown-item-background-color-hover: $gray-20;
+$drilldown-arrows-defs: (
+ prev : ('name' : icon-prev-10x14, 'size': 14px 10px, 'offset': auto 17px, 'color': $medium-gray, 'color-hover': $dark-gray),
+ next : ('name' : icon-next-10x14, 'size': 14px 10px, 'offset': auto 17px, 'color': $medium-gray, 'color-hover': $dark-gray),
+);
+
+// Forms
+// -----
+$form-label-margin: 0 0 rem-calc(8);
+$legend-font-size: $form-label-font-size;
+$legend-color: $form-label-color;
+$legend-line-height: $form-label-line-height;
+$form-legend-margin: $form-label-margin;
+$form-checkbox-margin: 0 rem-calc(32) 0 0;
+$form-checkbox-label-padding: 0 0 0 rem-calc(24);
+$checkbox-icons: (
+  'checkbox': (
+    'default': ('name': icon-checkbox-16, 'size': 16px, 'color': $gray-50),
+    'checked': ('name': icon-checkbox-8, 'size': 8px, 'color': $primary-color, 'offset': 4px)
+  ),
+  'radio': (
+    'default': ('name': icon-radio-16, 'size': 16px, 'color': $gray-50),
+    'checked': ('name': icon-radio-8, 'size': 8px, 'color': $primary-color, 'offset': 4px),
+  )
+) !default;
+
+$select-icon-size: 6px 12px;
+$input-error-margin: 8px 0 0;
+
+// Pagination
+// ----------
+$pagination-margin: 0;
+$pagination-line-height: 1;
+$pagination-item-sizes: (
+  touch: ('size': 44px, 'a-padding': 7px, 'li-margin': 0, 'inner-padding': 0 7px),
+  mouse: ('size' : 30px, 'a-padding': 0, 'li-margin': 0 2px, 'inner-padding': 0 7px)
+);
+$pagination-arrows-defs: (
+  next: ('name': icon-next-10x14, 'size': 10px 14px, 'color': $medium-gray, 'color-hover': $primary-color, 'padding-side': right, 'has-text': true),
+  previous: ('name': icon-prev-10x14, 'size': 10px 14px, 'color': $medium-gray, 'color-hover': $primary-color, 'padding-side': left, 'has-text': true),
+  first: ('name': icon-first-16x14, 'size': 16px 14px, 'color': $medium-gray, 'color-hover': $primary-color, 'padding-side': left, 'has-text': false),
+  last: ('name': icon-last-16x14, 'size': 16px 14px, 'color': $medium-gray, 'color-hover': $primary-color, 'padding-side': right, 'has-text': false)
+);
+$pagination-item-border: 1px solid $medium-gray;
+$pagination-item-border-color-hover: $primary-color;
+$pagination-item-color-hover: $primary-color;
+
+// Progress bar settings
+$progress-border: 1px solid $medium-gray;
+$progress-padding: 3px;
+$progress-meter-text-size: 14px;
+
+// Slider
+// ------
+$slider-margin: 18px 0;
+$slider-touch-color: $primary-color;
+$slider-touch-color-hover: scale-color($slider-touch-color, $lightness: -20%);
+$slider-vertical-height: 200px;
+
+$slider-sizes: (
+  touch: ('dragger-size': 44px 24px, 'icon-name': icon-slider-24x24, 'icon-size': 24px),
+  mouse: ('dragger-size' : 16px, 'icon-name': icon-slider-16x16, 'icon-size': 16px)
+);
+
+// Tabs
+// ----
+$tab-item-background: $gray-10;
+$tabs-radius: none;
+
+// Z-Index
+// -------
+
+$zindex: (
+  fixedContent: 40,
+  storeSlideButton: 50,
+  dropdown: 70,
+  topmenu: 100,
+  preloader: 10000
+);
+
+// Transitions
+// -----------
+
+$transition-speed-fast: 150ms;
+$transition-speed-normal: 350ms;
+$transition-speed-slow: 750ms;
+
+// Custom vals
+// -----------
+$custom-border-radius: 1px;
+
+$button-radius: $custom-border-radius;
+$select-radius: $custom-border-radius;
+$input-radius: $custom-border-radius;
+$pagination-radius: $custom-border-radius;
+$form-button-radius: $custom-border-radius;
+$progress-radius: $custom-border-radius;

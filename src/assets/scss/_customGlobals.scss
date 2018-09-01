@@ -1,0 +1,65 @@
+.container {
+  margin: 0 auto;
+
+  @include -zf-each-breakpoint {
+    max-width: -zf-get-bp-val($container-widths, $-zf-size);
+    padding: -zf-get-bp-val($container-padding, $-zf-size);
+  }
+}
+
+.input-wrapper {
+  margin: 0 0 1em 0;
+}
+
+.close-button {
+  position: absolute !important;
+  top: 0;
+  #{$global-right}: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+// Paragraphs calculations
+@each $size, $paragraphs in $p-sizes {
+  @include breakpoint($size) {
+    @each $paragraph, $paragraph-defs in $paragraphs {
+      $font-size-temp: 1rem;
+      #{$paragraph}, .#{$paragraph} {
+
+        @if map-has-key($paragraph-defs, font-size) {
+          $font-size-temp: rem-calc(map-get($paragraph-defs, font-size));
+          font-size: $font-size-temp;
+        } @else if map-has-key($paragraph-defs, fs) {
+          $font-size-temp: rem-calc(map-get($paragraph-defs, fs));
+          font-size: $font-size-temp;
+        } @else if $size == $-zf-zero-breakpoint {
+          font-size: $font-size-temp;
+        }
+        @if map-has-key($paragraph-defs, line-height) {
+          line-height: unitless-calc(map-get($paragraph-defs, line-height), $font-size-temp);
+        } @else if map-has-key($paragraph-defs, lh) {
+          line-height: unitless-calc(map-get($paragraph-defs, lh), $font-size-temp);
+        } @else if $size == $-zf-zero-breakpoint {
+          line-height: unitless-calc($paragraph-lineheight, $font-size-temp);
+        }
+
+        @if map-has-key($paragraph-defs, margin-top) {
+          margin-top: map-get($paragraph-defs, margin-top);
+        } @else if map-has-key($paragraph-defs, mt) {
+          margin-top: map-get($paragraph-defs, mt);
+        } @else if $size == $-zf-zero-breakpoint {
+          margin-top: 0;
+        }
+        @if map-has-key($paragraph-defs, margin-bottom) {
+          margin-bottom: map-get($paragraph-defs, margin-bottom);
+        } @else if map-has-key($paragraph-defs, mb) {
+          margin-bottom: map-get($paragraph-defs, mb);
+        } @else if $size == $-zf-zero-breakpoint {
+          margin-bottom: $paragraph-margin-bottom;
+        }
+      }
+    }
+  }
+}

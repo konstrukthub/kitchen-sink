@@ -1,0 +1,168 @@
+@mixin slider-container {
+  .slider {
+    cursor: pointer;
+    height: $slider-height;
+    margin: $slider-margin;
+    position: relative;
+    touch-action: none;
+    user-select: none;
+
+    &:before {
+      background-color: $slider-background;
+      content: '';
+      height: $slider-height;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+}
+
+@mixin slider-vertical {
+  .slider.vertical {
+    display: inline-block;
+    width: $slider-width-vertical;
+    height: $slider-vertical-height;
+    margin: get-side($slider-margin, left) get-side($slider-margin, top);
+    transform: scale(1, -1);
+
+    &:before {
+      bottom: 0;
+      height: auto;
+      top: 0;
+    }
+  }
+
+  .slider.vertical .slider-fill {
+    top: 0;
+    width: $slider-width-vertical;
+    max-height: 100%;
+  }
+
+  .slider.vertical .slider-handle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @each $intent, $value in $slider-sizes {
+    [data-whatintent='#{$intent}']  .slider.vertical .slider-handle {
+      width: get-side(map-get($value, dragger-size), top);
+      height: get-side(map-get($value, dragger-size), left);
+
+      &:before {
+        height: get-side(map-get($value, icon-size), left);
+        width: get-side(map-get($value, icon-size), top);
+      }
+    }
+  }
+}
+
+@mixin slider-fill {
+  .slider-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: inline-block;
+    max-width: 100%;
+    height: $slider-height;
+
+    background-color: $slider-fill-background;
+    transition: $slider-transition;
+
+    &.is-dragging {
+      transition: all 0s linear;
+    }
+  }
+}
+
+@mixin slider-handle {
+  .slider-handle {
+    @include disable-mouse-outline;
+    @include vertical-center;
+    left: 0;
+    z-index: 1;
+
+    display: inline-block;
+
+    transition: $slider-transition;
+    touch-action: manipulation;
+
+    &:before {
+      @include absolute-center;
+
+      content: '';
+      transition: $slider-transition;
+    }
+
+    &.is-dragging {
+      transition: all 0s linear;
+
+      &:hover {
+        transition: all 0s linear;
+      }
+    }
+  }
+
+  @each $intent, $value in $slider-sizes {
+    [data-whatintent='#{$intent}'] .slider-handle {
+      width: get-side(map-get($value, dragger-size), left);
+      height: get-side(map-get($value, dragger-size), top);
+
+      @if (has-value(map-get($value, icon-name))) and (map-get($value, icon-name) != none) {
+        &:before {
+          background-image: sassvg(map-get($value, icon-name), $slider-touch-color);
+        }
+
+        &:hover:before {
+          background-image: sassvg(map-get($value, icon-name), $slider-touch-color-hover);
+        }
+      }
+      @else {
+        &:before {
+          background-color: $slider-touch-color;
+          border-radius: $slider-radius;
+        }
+
+        &:hover:before {
+          background-color: $slider-touch-color-hover;
+        }
+      }
+
+      &:before {
+        height: get-side(map-get($value, icon-size), top);
+        width: get-side(map-get($value, icon-size), left);
+      }
+    }
+  }
+}
+
+@mixin foundation-slider {
+  // Container
+  @include slider-container;
+
+  // Fill area
+  @include slider-fill;
+
+  // Draggable handle
+  @include slider-handle;
+
+  // Disabled state
+  .slider.disabled,
+  .slider[disabled] {
+    @include slider-disabled;
+  }
+
+  // Vertical slider
+  @include slider-vertical;
+
+  // RTL support
+  @if $global-text-direction == rtl {
+    .slider:not(.vertical) {
+      transform: scale(-1, 1);
+    }
+  }
+}

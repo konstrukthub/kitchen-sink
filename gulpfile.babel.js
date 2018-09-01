@@ -29,7 +29,7 @@ function loadConfig() {
 
 // Build the "dist" folder by running all of the below tasks
 gulp.task('build',
- gulp.series(clean, gulp.parallel(pages, sass, javascript, images, copy), styleGuide));
+ gulp.series(clean, sassvg, gulp.parallel(pages, sass, javascript, images, copy), styleGuide));
 
 // Build the site, run the server, and watch for file changes
 gulp.task('default',
@@ -73,6 +73,14 @@ function styleGuide(done) {
     output: PATHS.dist + '/styleguide.html',
     template: 'src/styleguide/template.html'
   }, done);
+}
+
+function sassvg() {
+  return gulp.src('src/assets/svg/icon-*.svg')
+      .pipe($.sassvg({
+          outputFolder: 'src/assets/scss/', // IMPORTANT: this folder needs to exist
+          optimizeSvg: true // true (default) means about 25% reduction of generated file size, but 3x time for generating the _icons.scss file
+      }));
 }
 
 // Compile Sass into CSS
@@ -153,6 +161,7 @@ function watch() {
   gulp.watch('src/pages/**/*.html').on('all', gulp.series(pages, browser.reload));
   gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series(resetPages, pages, browser.reload));
   gulp.watch('src/assets/scss/**/*.scss').on('all', sass);
+  gulp.watch('src/assets/svg/**/icon-*.svg').on('all', sassvg);
   gulp.watch('src/assets/js/**/*.js').on('all', gulp.series(javascript, browser.reload));
   gulp.watch('src/assets/img/**/*').on('all', gulp.series(images, browser.reload));
   gulp.watch('src/styleguide/**').on('all', gulp.series(styleGuide, browser.reload));
