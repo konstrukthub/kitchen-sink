@@ -1,5 +1,5 @@
 {
-  "name": "foundation-zurb-template",
+  "name": "foundation-konstruk",
   "version": "1.0.0",
   "description": "Official ZURB Template for Foundation for Sites.",
   "main": "gulpfile.js",
@@ -11,7 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "aos": "^2.2.0",
-    "foundation-sites": "~6.4.1",
+    "foundation-sites": "~6.4.3",
     "jquery": "^3.2.1",
     "motion-ui": "~1.2.2",
     "slick-carousel": "^1.8.1",
