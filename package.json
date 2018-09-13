@@ -1,13 +1,13 @@
 {
-  "name": "foundation-konstruk",
+  "name": "foundation-konstrukt",
   "version": "1.0.0",
-  "description": "Official ZURB Template for Foundation for Sites.",
+  "description": "Official ZURB Template for Foundation for Sites. Enhanced scss. Konstrukt version.",
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp",
     "build": "gulp build --production"
   },
-  "author": "ZURB <foundation@zurb.com>",
+  "author": "Konstrukt <office@konstrukt.rs>",
   "license": "MIT",
   "dependencies": {
     "aos": "^2.2.0",
@@ -53,16 +53,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zurb/foundation-zurb-template.git"
+    "url": "https://github.com/konstrukthub/kitchen-sink"
   },
   "bugs": {
-    "url": "https://github.com/zurb/foundation-sites/issues",
-    "email": "foundation@zurb.com"
+    "url": "https://github.com/konstrukthub/kitchen-sink/issues",
+    "email": "office@konstrukt.rs"
   },
   "babel": {
     "presets": [
       "es2015"
     ]
-  },
-  "private": true
+  }
 }
