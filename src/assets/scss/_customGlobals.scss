@@ -7,6 +7,11 @@
   }
 }
 
+[type=checkbox], [type=file], [type=radio] {
+  visibility: hidden;
+}
+
+
 .input-wrapper {
   margin: 0 0 1em 0;
 }

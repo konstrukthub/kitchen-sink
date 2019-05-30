@@ -1,6 +1,6 @@
 {
   "name": "foundation-konstrukt",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Official ZURB Template for Foundation for Sites. Enhanced scss. Konstrukt version.",
   "main": "gulpfile.js",
   "scripts": {
@@ -11,7 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "aos": "^2.2.0",
-    "foundation-sites": "~6.4.3",
+    "foundation-sites": "~6.5.3",
     "jquery": "^3.2.1",
     "motion-ui": "~1.2.2",
     "slick-carousel": "^1.8.1",
@@ -26,7 +26,7 @@
     "babel-preset-es2015": "^6.3.13",
     "babel-register": "^6.7.2",
     "browser-sync": "^2.10.0",
-    "gulp": "gulpjs/gulp#4.0",
+    "gulp": "4.0.2",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-babel": "^6.1.2",
     "gulp-clean-css": "^3.3.1",
@@ -37,7 +37,7 @@
     "gulp-if": "^2.0.0",
     "gulp-imagemin": "^2.2.1",
     "gulp-load-plugins": "^1.1.0",
-    "gulp-sass": "^2.1.0",
+    "gulp-sass": "~3.2.1",
     "gulp-sassvg": "^3.0.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.2.0",

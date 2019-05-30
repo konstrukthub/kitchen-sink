@@ -17,7 +17,7 @@
   li {
     border-radius: $radius;
     display: inline-block;
-    font-size: 0;
+    font-size: $pagination-font-size;
     line-height: $line-height;
     position: relative;
     vertical-align: middle;
