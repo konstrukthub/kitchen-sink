@@ -24,6 +24,10 @@ $p-sizes: (
   )
 );
 
+//
+// heading margin ratio
+$heading-margin-ratio: 2;  // top:bottom
+
 //custom accordion
 //custom:
 $accordion-bg-img-size: 16px 26px; //24px default, 26x16 for arrows
@@ -142,6 +146,32 @@ $slider-vertical-height: 200px;
 $slider-sizes: (
   touch: ('dragger-size': 44px 24px, 'icon-name': icon-slider-24x24, 'icon-size': 24px),
   mouse: ('dragger-size' : 16px, 'icon-name': icon-slider-16x16, 'icon-size': 16px)
+);
+
+// Spacings
+// --------
+$custom-spacing: (
+  small: (
+    'xs': rem-calc(8),
+    's': rem-calc(16),
+    'm': rem-calc(48),
+    'l': rem-calc(96),
+    'xl': rem-calc(144),
+  ),
+  tablet-portrait: (
+    'xs': rem-calc(8),
+    's': rem-calc(32),
+    'm': rem-calc(80),
+    'l': rem-calc(144),
+    'xl': rem-calc(192),
+  ),
+  large: (
+    'xs': rem-calc(8),
+    's': rem-calc(32),
+    'm': rem-calc(96),
+    'l': rem-calc(160),
+    'xl': rem-calc(240),
+  )
 );
 
 // Tabs

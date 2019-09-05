@@ -14,6 +14,7 @@
 @import 'customSlider';
 @import 'customDrilldown';
 @import 'customTabs';
+@import 'customSpacings';
 
 @include foundation-global-styles;
 // @include foundation-grid;
@@ -62,6 +63,9 @@
 
 @include motion-ui-transitions;
 @include motion-ui-animations;
+
+@include custom-spacings;
+@include heading-spacings;
 
 // Custom mixins
 @import 'customGlobals';

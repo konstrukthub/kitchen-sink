@@ -1,51 +1,53 @@
-<h1 class="no-t-m">Base Typography</h1>
+<h1 class="margin-bottom-s">Base Typography</h1>
 
+Headins have no margins by default. if you wish to add top and bottom margins use `with-margins` class. If you want just top or bottom margins use `with-bottom-margin` or `with-top-margin`. margin ration top:bottom is 1:2 by default. The ratio can be changed in `_customSettings.scss`
 ```html
-<h1>h1. This is a very large header.</h1>
-<h2>h2. This is a large header.</h2>
-<h3>h3. This is a medium header.</h3>
-<h4>h4. This is a moderate header.</h4>
-<h5>h5. This is a small header.</h5>
-<h6>h6. This is a tiny header.</h6>
+<h1 class="with-bottom-margin">h1. This is a very large header.</h1>
+<h2 class="with-margins">h2. This is a large header.</h2>
+<h3 class="with-margins">h3. This is a medium header.</h3>
+<h4 class="with-margins">h4. This is a moderate header.</h4>
+<h5 class="with-margins">h5. This is a small header.</h5>
+<h6 class="with-margins">h6. This is a tiny header.</h6>
 <hr>
 <p>This is a paragraph. ... You can also use em to <em>italicize your words</em>.</p>
 <hr>
 <p class="lead">This is a <strong>LEADING</strong> paragraph.</p>
 ```
     
-<h1>h1. This is a very large header.</h1>
-<h2>h2. This is a large header.</h2>
-<h3>h3. This is a medium header.</h3>
-<h4>h4. This is a moderate header.</h4>
-<h5>h5. This is a small header.</h5>
-<h6>h6. This is a tiny header.</h6>
+<h1 class="with-bottom-margin">h1. This is a very large header.</h1>
+<h2 class="with-margins">h2. This is a large header.</h2>
+<h3 class="with-margins">h3. This is a medium header.</h3>
+<h4 class="with-margins">h4. This is a moderate header.</h4>
+<h5 class="with-margins">h5. This is a small header.</h5>
+<h6 class="with-margins">h6. This is a tiny header.</h6>
 <p>This is a paragraph. Paragraphs are preset with a font size, line height and spacing to match the overall vertical rhythm. To show what a paragraph looks like this needs a little more content so, did you know that there are storms occurring on Jupiter that are larger than the Earth? Pretty cool. Wrap strong around type to <strong>make it bold!</strong>. You can also use em to <em>italicize your words</em>.</p>
 <p class="lead">This is a <strong>LEADING</strong> paragraph. Paragraphs are preset with a font size, line height and spacing to match the overall vertical rhythm. To show what a paragraph looks like this needs a little more content so, did you know that there are storms occurring on Jupiter that are larger than the Earth? Pretty cool. Wrap strong around type to <strong>make it bold!</strong>. You can also use em to <em>italicize your words</em>.</p>
 
 ---
 
-### Base Typography - headers - no margin
+<h3 class="margin-top-s margin-bottom-s">Base Typography - headers - no margin</h3>
 
+Headings are with no margins by default. Add them using helper classes from `custom spacings`. See the exemplae above. To remove them on `<p>` elements use `no-b-m` or `no-t-m`
 ```html
-<h1 class="no-t-m">h1. This is a very large header no top margin.</h1>
-<h2 class="no-t-m">h2. This is a large header no top margin.</h2>
+<h1>h1. This is a very large header no margins.</h1>
+<h2>. This is a large header no top margin.</h2>
 <p class="no-b-m">This is a paragraph <strong>no bottom margin</strong>.</p>
 <hr>
-<h3 class="no-t-m">h2. This is a large header no top margin.</h3>
+<h3>h2. This is a large header no margins.</h3>
 <p>This is a paragraph. Paragraphs are ...</p>
 ```
 
-<h1 class="no-t-m">h1. This is a very large header no top margin.</h1>
-<h2 class="no-t-m">h2. This is a large header no top margin.</h2>
+<h1>h1. This is a very large header no margins.</h1>
+<h2>h2. This is a large header margins.</h2>
 <p class="no-b-m">This is a paragraph <strong>no bottom margin</strong>. Paragraphs are preset with a font size, line height and spacing to match the overall vertical rhythm. To show what a paragraph looks like this needs a little more content so, did you know that there are storms occurring on Jupiter that are larger than the Earth? Pretty cool. Wrap strong around type to <strong>make it bold!</strong>. You can also use em to <em>italicize your words</em>.</p>
 <hr>
-<h3 class="no-t-m">h2. This is a large header no top margin.</h3>
+<h3>h2. This is a large header no margins.</h3>
 <p>This is a paragraph. Paragraphs are preset with a font size, line height and spacing to match the overall vertical rhythm. To show what a paragraph looks like this needs a little more content so, did you know that there are storms occurring on Jupiter that are larger than the Earth? Pretty cool. Wrap strong around type to <strong>make it bold!</strong>. You can also use em to <em>italicize your words</em>.</p>
 
 
 ---
 
-### Anchor
+<h3 class="margin-top-s margin-bottom-s">Anchor</h3>
 
 ```html_example
 <a href="#">It's dangerous to go alone, take this.</a>
@@ -53,7 +55,7 @@
 
 
 
-# Accordion
+<h1 class="margin-top-s margin-bottom-s">Accordion</h1>
 
 Use accordion settings in `_settings.scss` to turn on/off plus/minus up/down arrows. 
 
@@ -89,7 +91,7 @@ $accordion-icon-bg-img-hover: $black;
 
 
 
-# Breadcrumbs
+<h1 class="margin-top-s margin-bottom-s">Breadcrumbs</h1>
 
 ```html_example
 <nav aria-label="You are here:" role="navigation">
@@ -106,9 +108,8 @@ $accordion-icon-bg-img-hover: $black;
 
 
 
-# Buttons
-
-### Regular Buttons
+<h1 class="margin-top-s margin-bottom-s">Buttons</h1>
+<h3 class="margin-bottom-s">Regular Buttons</h3>
 
 ```html_example
 <div class="input-wrapper">
@@ -134,7 +135,7 @@ $accordion-icon-bg-img-hover: $black;
 </div>
 ```
 
-### Hollow Buttons
+<h3 class="margin-bottom-s margin-top-s">Hollow Buttons</h3>
 
 ```html_example
 <div class="input-wrapper">
@@ -146,7 +147,7 @@ $accordion-icon-bg-img-hover: $black;
 </div>
 ```
 
-### Expanded buttons
+<h3 class="margin-bottom-s margin-top-s">Expanded buttons</h3>
 
 ```html_example
 <div class="input-wrapper">
@@ -157,7 +158,7 @@ $accordion-icon-bg-img-hover: $black;
 </div>
 ```
 
-### Disabled Buttons
+<h3 class="margin-bottom-s margin-top-s">Disabled Buttons</h3>
 
 ```html_example
 <div class="input-wrapper">
@@ -169,7 +170,7 @@ $accordion-icon-bg-img-hover: $black;
 </div>
 ```
 
-### Clear Buttons
+<h3 class="margin-bottom-s margin-top-s">Clear Buttons</h3>
 
 ```html_example
 <div class="input-wrapper">
@@ -181,9 +182,9 @@ $accordion-icon-bg-img-hover: $black;
 </div>
 ```
 
-### Square Buttons
+<h3 class="margin-bottom-s margin-top-s">Square Buttons</h3>
 
-Sqaure buttons are generated from `icon-{icon-name}.svg` files defined in `_settingsCustom.scss` defining global touch size, and each icon size in icons map
+Square buttons are generated from `icon-{icon-name}.svg` files defined in `_settingsCustom.scss` defining global touch size, and each icon size in icons map
 
 ```scss
 $square-button-size: 44px;
@@ -203,10 +204,8 @@ $button-icons-hover-color: $black;
 ```
 
 
-
-# Buttons Groups
-
-### Coloring
+<h1 class="margin-bottom-s">Buttons Groups</h1>
+<h3 class="margin-bottom-s">Coloring</h3>
 
 ```html_example
 <div class="input-wrapper">
@@ -219,7 +218,7 @@ $button-icons-hover-color: $black;
 </div>
 ```
 
-### Equal widths
+<h3 class="margin-bottom-s margin-top-s">Equal widths</h3>
 
 ```html_example
 <div class="input-wrapper">
@@ -231,7 +230,7 @@ $button-icons-hover-color: $black;
 </div>
 ```
 
-### Stacked (from medium down)
+<h3 class="margin-bottom-s margin-top-s">Stacked (from medium down)</h3>
 ```html_example
 <div class="input-wrapper">
   <div class="stacked-for-medium button-group">
@@ -244,7 +243,7 @@ $button-icons-hover-color: $black;
 </div>
 ```
 
-### Sizing
+<h3 class="margin-bottom-s margin-top-s">Sizing</h3>
 ```html_example
 <div class="input-wrapper">
   <div class="small button-group">
@@ -257,7 +256,7 @@ $button-icons-hover-color: $black;
 
 
 
-# Callouts
+<h1 class="margin-bottom-s margin-top-s">Callouts</h1>
 
 ```html
 <div class="callout">
@@ -325,7 +324,7 @@ $button-icons-hover-color: $black;
   </div>
 </div>
 
-### Closable Callouts
+<h3 class="margin-bottom-s margin-top-s">Closable Callouts</h3>
 
 ```html_example
 <div class="callout alert" data-closable>
@@ -340,7 +339,7 @@ $button-icons-hover-color: $black;
 
 
 
-# Drilldown menu & Off-canvas
+<h1 class="margin-bottom-s">Drilldown menu & Off-canvas</h1>
 
 ```scss
 $close-section-height: get-side($square-button-size, top);
@@ -428,7 +427,7 @@ $drilldown-arrows-defs: (
 
 
 
-# Forms
+<h1 class="margin-bottom-s">Forms</h1>
 
 Labels for inline, middle aligned inputs have new, responsive `.middle` class names depending on the grid breakpoint classes: `.middle-{screen-size-breakpoint}`
 
@@ -568,7 +567,7 @@ $input-error-margin: 8px 0 0;
 
 
 
-# Labels
+<h1 class="margin-bottom-s">Labels</h1>
 
 ```html_example
 <div class="input-wrapper">
@@ -582,7 +581,7 @@ $input-error-margin: 8px 0 0;
 
 
 
-# Pagination
+<h1 class="margin-bottom-s">Pagination</h1>
 
 Pagination settings are refactored and can be set up under Pagination section in `_customSettings.scss`. Bunch of new settings available:
 ```scss
@@ -639,7 +638,7 @@ $pagination-item-color-hover: $primary-color;
 
 
 
-# Progress bar
+<h1 class="margin-bottom-s">Progress bar</h1>
 
 ```html
 <div class="secondary progress" role="progressbar" tabindex="0" aria-valuenow="25" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
@@ -695,7 +694,7 @@ $pagination-item-color-hover: $primary-color;
   </span>
 </div>
 
-### Native Progress
+<h3 class="margin-bottom-s margin-top-s">Native Progress</h3>
 
 <p>As an alternative to our custom progress bar style, you can also opt to use the native <code>&lt;progress&gt;</code> element. It provides a more succinct way to create progress bars, but it's not supported in IE9, and some other older browsers. <a href="https://caniuse.com/#feat=progress">View <code>&lt;progress&gt;</code> element support.</a></p>
 
@@ -705,7 +704,7 @@ $pagination-item-color-hover: $primary-color;
 
 
 
-# Slider
+<h1 class="margin-bottom-s">Slider</h1>
 
 This handy lil slider is perfect for setting specific values within a range.
 
@@ -791,7 +790,7 @@ $slider-sizes: (
 
 
 
-# Tabs
+<h1 class="margin-bottom-s">Tabs</h1>
 
 <div class="grid-x grid-margin-x">
   <div class="cell small-12 input-wrapper">
@@ -813,25 +812,25 @@ $slider-sizes: (
 
 
 
-# The Grid
+<h1 class="margin-bottom-s">The Grid</h1>
 
 <p class="lead">Problem: You've got tons of content, each needing different sized cells, and don't know how to quick and easily get it all done. Solution: The awesome XY grid!</p>
 
 ---
 
-## Overview
+<h2 class="margin-bottom-s">Overview</h2>
 
 The grid is built around two key elements: grid-x and cells. grid-container create a max-width and contain the grid, and cells create the final structure. Everything on your page that you don't give a specific structural style to should be within a grid-x or cell.
 
 ---
 
-## Nesting
+<h2 class="margin-bottom-s">Nesting</h2>
 
 In the Grid you can nest cells down as far as you'd like. Just embed grid-x inside cells and go from there. Each embedded grid-x can contain up to 12 cells.
 
 ---
 
-## How to Use
+<h2 class="margin-bottom-s">How to Use</h2>
 
 Using this framework is easy. Here's how your code will look when you use a series of `<div>` tags to create cells.
 
@@ -876,7 +875,7 @@ Using this framework is easy. Here's how your code will look when you use a seri
 
 ---
 
-## Nesting grid-x
+<h2 class="margin-bottom-s">Nesting grid-x</h2>
 
 In the Grid you can nest cells down as far as you'd like. Just embed grid-x inside cells and go from there. Each embedded grid-x can contain up to 12 cells.
 
@@ -914,7 +913,7 @@ In the Grid you can nest cells down as far as you'd like. Just embed grid-x insi
 
 ---
 
-## Small Grid
+<h2 class="margin-bottom-s">Small Grid</h2>
 
 As you've probably noticed in the examples above, you have access to a small, medium, and large grid. If you know that your grid structure will be the same for small devices as it will be on large devices, just use the small grid. You can override your small grid classes by adding medium or large grid classes.
 
@@ -940,7 +939,7 @@ As you've probably noticed in the examples above, you have access to a small, me
 
 
 
-# Colors
+<h1 class="margin-bottom-s">Colors</h1>
 
 <p class="lead">Below you can find the different values we created that support the primary color variable you can change at any time in <code>\_settings.scss</code></p>
 

@@ -1,0 +1,97 @@
+@mixin custom-spacings($custom-spacing: $custom-spacing) {
+  @each $size, $spacings in $custom-spacing {
+    @include breakpoint($size) {
+      @each $breakpointKey, $value in $spacings {
+        .margin-bottom-#{$breakpointKey} {
+          margin-bottom: $value;
+        }
+
+        .margin-left-#{$breakpointKey} {
+          margin-left: $value;
+        }
+
+        .margin-right-#{$breakpointKey} {
+          margin-right: $value;
+        }
+
+        .margin-top-#{$breakpointKey} {
+          margin-top: $value;
+        }
+
+        .padding-top-#{$breakpointKey} {
+          padding-top: $value;
+        }
+
+        .padding-bottom-#{$breakpointKey} {
+          padding-bottom: $value;
+        }
+
+        .padding-right-#{$breakpointKey} {
+          padding-right: $value;
+        }
+
+        .padding-left-#{$breakpointKey} {
+          padding-left: $value;
+        }
+
+        .padding-#{$breakpointKey} {
+          padding: $value;
+        }
+      }
+    }
+  }
+}
+
+@mixin heading-spacings($ratio: $heading-margin-ratio, $spacings: $header-styles) {
+  @each $size, $headers in $spacings {
+    @include breakpoint($size) {
+      @each $header, $header-defs in $headers {
+        $font-size-temp: 1rem;
+        $double-size-temp: #{unitless-calc($font-size-temp) * $ratio}rem;
+
+        #{$header}.with-margins, .#{$header}.with-margins {
+          @if map-has-key($header-defs, font-size) {
+            $font-size-temp: rem-calc(map-get($header-defs, font-size));
+            $double-font-size-temp: rem-calc(map-get($header-defs, font-size) * $ratio);
+            margin-bottom: $font-size-temp;
+            margin-top: $double-font-size-temp;
+          } @else if map-has-key($header-defs, fs) {
+            $font-size-temp: rem-calc(map-get($header-defs, fs));
+            $double-font-size-temp: rem-calc(map-get($header-defs, fs) * $ratio);
+            margin-bottom: $font-size-temp;
+            margin-top: $double-font-size-temp;
+          } @else if $size == $-zf-zero-breakpoint {
+            margin-bottom: $font-size-temp;
+            margin-top: $double-font-size-temp;
+          }
+        }
+
+        #{$header}.with-top-margin, .#{$header}.with-top-margin {
+          @if map-has-key($header-defs, font-size) {
+            $font-size-temp: rem-calc(map-get($header-defs, font-size));
+            $double-font-size-temp: rem-calc(map-get($header-defs, font-size) * $ratio);
+            margin-top: $double-font-size-temp;
+          } @else if map-has-key($header-defs, fs) {
+            $font-size-temp: rem-calc(map-get($header-defs, fs));
+            $double-font-size-temp: rem-calc(map-get($header-defs, fs) * $ratio);
+            margin-top: $double-font-size-temp;
+          } @else if $size == $-zf-zero-breakpoint {
+            margin-top: $double-font-size-temp;
+          }
+        }
+
+        #{$header}.with-bottom-margin, .#{$header}.with-bottom-margin {
+          @if map-has-key($header-defs, font-size) {
+            $font-size-temp: rem-calc(map-get($header-defs, font-size));
+            margin-bottom: $font-size-temp;
+          } @else if map-has-key($header-defs, fs) {
+            $font-size-temp: rem-calc(map-get($header-defs, fs));
+            margin-bottom: $font-size-temp;
+          } @else if $size == $-zf-zero-breakpoint {
+            margin-bottom: $font-size-temp;
+          }
+        }
+      }
+    }
+  }
+}
