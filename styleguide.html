@@ -104,7 +104,7 @@
 
     <header class="sg-header" id="sg-header">
       <div class="grid-container">
-        <h1>Konstrukt Kitchen Sink</h1>
+        <h1 class="with-bottom-margin">Konstrukt Kitchen Sink</h1>
         <p class="lead">This style guide was built under Foundation for Sites. We love Foundation. For more information on how to use this responsive front-end framework, check out the documentation.</p>
         <a href="http://foundation.zurb.com/docs/" class="button">Visit the Docs</a>
       </div>
@@ -116,12 +116,11 @@
         <div class="large-3 medium-4">
           <div class="sticky" data-sticky data-top-anchor="sg-header:bottom">
             <ul class="vertical menu sg-side-menu" data-smooth-scroll data-animation-easing="swing">
-              
+
                 <li><a href="#base-typography">Base Typography</a></li>
                 <li><a href="#accordion">Accordion</a></li>
                 <li><a href="#breadcrumbs">Breadcrumbs</a></li>
                 <li><a href="#buttons">Buttons</a></li>
-                <li><a href="#buttons-groups">Buttons Groups</a></li>
                 <li><a href="#callouts">Callouts</a></li>
                 <li><a href="#drilldown-menu-amp-off-canvas">Drilldown menu &amp; Off-canvas</a></li>
                 <li><a href="#forms">Forms</a></li>
@@ -139,47 +138,56 @@
 
         <div class="large-9 medium-8 cell">
             <section class="ss-section" id="base-typography">
-              <h1 class="no-t-m">Base Typography</h1>
+              <h1 class="margin-bottom-s">Base Typography</h1>
 
-<div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>h1. This is a very large header.<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>h2. This is a large header.<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>h3. This is a medium header.<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">h4</span>&gt;</span>h4. This is a moderate header.<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">h5</span>&gt;</span>h5. This is a small header.<span class="hljs-tag">&lt;/<span class="hljs-title">h5</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">h6</span>&gt;</span>h6. This is a tiny header.<span class="hljs-tag">&lt;/<span class="hljs-title">h6</span>&gt;</span>
+<p>Headins have no margins by default. if you wish to add top and bottom margins use <code>with-margins</code> class. If you want just top or bottom margins use <code>with-bottom-margin</code> or <code>with-top-margin</code>. margin ration top:bottom is 1:2 by default. The ratio can be changed in <code>_customSettings.scss</code></p>
+<div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"with-bottom-margin"</span>&gt;</span>h1. This is a very large header.<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h2</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"with-margins"</span>&gt;</span>h2. This is a large header.<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"with-margins"</span>&gt;</span>h3. This is a medium header.<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h4</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"with-margins"</span>&gt;</span>h4. This is a moderate header.<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h5</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"with-margins"</span>&gt;</span>h5. This is a small header.<span class="hljs-tag">&lt;/<span class="hljs-title">h5</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h6</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"with-margins"</span>&gt;</span>h6. This is a tiny header.<span class="hljs-tag">&lt;/<span class="hljs-title">h6</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">hr</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>This is a paragraph. ... You can also use em to <span class="hljs-tag">&lt;<span class="hljs-title">em</span>&gt;</span>italicize your words<span class="hljs-tag">&lt;/<span class="hljs-title">em</span>&gt;</span>.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">hr</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"lead"</span>&gt;</span>This is a <span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>LEADING<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span> paragraph.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre></div><p><h1>h1. This is a very large header.</h1></p>
-<p><h2>h2. This is a large header.</h2></p>
-<p><h3>h3. This is a medium header.</h3></p>
-<p><h4>h4. This is a moderate header.</h4></p>
-<p><h5>h5. This is a small header.</h5></p>
-<p><h6>h6. This is a tiny header.</h6></p>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"lead"</span>&gt;</span>This is a <span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>LEADING<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span> paragraph.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre></div><p><h1 class="with-bottom-margin">h1. This is a very large header.</h1></p>
+<p><h2 class="with-margins">h2. This is a large header.</h2></p>
+<h3 class="with-margins">h3. This is a medium header.</h3>
+<h4 class="with-margins">h4. This is a moderate header.</h4>
+<h5 class="with-margins">h5. This is a small header.</h5>
+<h6 class="with-margins">h6. This is a tiny header.</h6>
 <p>This is a paragraph. Paragraphs are preset with a font size, line height and spacing to match the overall vertical rhythm. To show what a paragraph looks like this needs a little more content so, did you know that there are storms occurring on Jupiter that are larger than the Earth? Pretty cool. Wrap strong around type to <strong>make it bold!</strong>. You can also use em to <em>italicize your words</em>.</p>
 <p class="lead">This is a <strong>LEADING</strong> paragraph. Paragraphs are preset with a font size, line height and spacing to match the overall vertical rhythm. To show what a paragraph looks like this needs a little more content so, did you know that there are storms occurring on Jupiter that are larger than the Earth? Pretty cool. Wrap strong around type to <strong>make it bold!</strong>. You can also use em to <em>italicize your words</em>.</p>
 
-<hr>
-<h3>Base Typography - headers - no margin</h3><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"no-t-m"</span>&gt;</span>h1. This is a very large header no top margin.<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">h2</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"no-t-m"</span>&gt;</span>h2. This is a large header no top margin.<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+---
+
+<h3 class="margin-top-s margin-bottom-s">Base Typography - headers - no margin</h3>
+
+<p>Headings are with no margins by default. Add them using helper classes from <code>custom spacings</code>. See the exemplae above. To remove them on <code>&lt;p&gt;</code> elements use <code>no-b-m</code> or <code>no-t-m</code></p>
+<div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>h1. This is a very large header no margins.<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>. This is a large header no top margin.<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"no-b-m"</span>&gt;</span>This is a paragraph <span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>no bottom margin<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span>.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">hr</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"no-t-m"</span>&gt;</span>h2. This is a large header no top margin.<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>This is a paragraph. Paragraphs are ...<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre></div><p><h1 class="no-t-m">h1. This is a very large header no top margin.</h1></p>
-<p><h2 class="no-t-m">h2. This is a large header no top margin.</h2></p>
+<span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>h2. This is a large header no margins.<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>This is a paragraph. Paragraphs are ...<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre></div><p><h1>h1. This is a very large header no margins.</h1></p>
+<p><h2>h2. This is a large header margins.</h2></p>
 <p class="no-b-m">This is a paragraph <strong>no bottom margin</strong>. Paragraphs are preset with a font size, line height and spacing to match the overall vertical rhythm. To show what a paragraph looks like this needs a little more content so, did you know that there are storms occurring on Jupiter that are larger than the Earth? Pretty cool. Wrap strong around type to <strong>make it bold!</strong>. You can also use em to <em>italicize your words</em>.</p>
 <hr>
-<h3 class="no-t-m">h2. This is a large header no top margin.</h3>
+<h3>h2. This is a large header no margins.</h3>
 <p>This is a paragraph. Paragraphs are preset with a font size, line height and spacing to match the overall vertical rhythm. To show what a paragraph looks like this needs a little more content so, did you know that there are storms occurring on Jupiter that are larger than the Earth? Pretty cool. Wrap strong around type to <strong>make it bold!</strong>. You can also use em to <em>italicize your words</em>.</p>
 
 
 <hr>
-<h3>Anchor</h3><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>It's dangerous to go alone, take this.<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span></code></pre></div>
+<h3 class="margin-top-s margin-bottom-s">Anchor</h3>
+
+<div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>It's dangerous to go alone, take this.<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span></code></pre></div>
 
 <div class="ss-code-live"><a href="#">It's dangerous to go alone, take this.</a></div>
             </section>
             <section class="ss-section" id="accordion">
-              <h1>Accordion</h1><p>Use accordion settings in <code>_settings.scss</code> to turn on/off plus/minus up/down arrows. </p>
+              <h1 class="margin-top-s margin-bottom-s">Accordion</h1>
+
+<p>Use accordion settings in <code>_settings.scss</code> to turn on/off plus/minus up/down arrows. </p>
 <div class="ss-code"><pre><code class="scss"><span class="hljs-variable">$accordion-plusminus</span><span class="hljs-value">: true;</span></code></pre></div><p>Also be aware that custom settings for accordions need to be set in <code>_settingsCustom.scss</code></p>
 <div class="ss-code"><pre><code class="scss"><span class="hljs-variable">$accordion-bg-img-size</span><span class="hljs-value">: <span class="hljs-number">16px</span> <span class="hljs-number">26px</span>;</span> <span class="hljs-comment">//24px default, 26x16 for arrows</span>
 <span class="hljs-variable">$accordion-icon-bg-img</span><span class="hljs-value">: <span class="hljs-variable">$gray-50</span>;</span>
@@ -216,7 +224,9 @@
 </ul></div>
             </section>
             <section class="ss-section" id="breadcrumbs">
-              <h1>Breadcrumbs</h1><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">nav</span> <span class="hljs-attribute">aria-label</span>=<span class="hljs-value">"You are here:"</span> <span class="hljs-attribute">role</span>=<span class="hljs-value">"navigation"</span>&gt;</span>
+              <h1 class="margin-top-s margin-bottom-s">Breadcrumbs</h1>
+
+<div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">nav</span> <span class="hljs-attribute">aria-label</span>=<span class="hljs-value">"You are here:"</span> <span class="hljs-attribute">role</span>=<span class="hljs-value">"navigation"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"breadcrumbs"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Features<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
@@ -239,7 +249,10 @@
 </nav></div>
             </section>
             <section class="ss-section" id="buttons">
-              <h1>Buttons</h1><h3>Regular Buttons</h3><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-wrapper"</span>&gt;</span>
+              <p><h1 class="margin-top-s margin-bottom-s">Buttons</h1></p>
+<h3 class="margin-bottom-s">Regular Buttons</h3>
+
+<div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-wrapper"</span>&gt;</span>
   <span class="hljs-comment">&lt;!-- Anchors (links) --&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button"</span>&gt;</span>Learn More<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button"</span>&gt;</span>View All Features<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
@@ -281,7 +294,9 @@
   <a class="button success" href="#">Success</a>
   <a class="button alert" href="#">Alert</a>
   <a class="button warning" href="#">Warning</a>
-</div></div><h3>Hollow Buttons</h3><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-wrapper"</span>&gt;</span>
+</div></div><h3 class="margin-bottom-s margin-top-s">Hollow Buttons</h3>
+
+<div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-wrapper"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hollow button"</span>&gt;</span>Primary<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hollow button secondary"</span>&gt;</span>Secondary<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hollow button success"</span>&gt;</span>Success<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
@@ -295,7 +310,9 @@
   <button class="hollow button success">Success</button>
   <button class="hollow button alert">Alert</button>
   <button class="hollow button warning">Warning</button>
-</div></div><h3>Expanded buttons</h3><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-wrapper"</span>&gt;</span>
+</div></div><h3 class="margin-bottom-s margin-top-s">Expanded buttons</h3>
+
+<div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-wrapper"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button expanded"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Such Expand<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-wrapper"</span>&gt;</span>
@@ -307,7 +324,9 @@
 </div>
 <div class="input-wrapper">
   <a class="button small expanded" href="#">Wow, Small Expand</a>
-</div></div><h3>Disabled Buttons</h3><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-wrapper"</span>&gt;</span>
+</div></div><h3 class="margin-bottom-s margin-top-s">Disabled Buttons</h3>
+
+<div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-wrapper"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button primary"</span> <span class="hljs-attribute">disabled</span>&gt;</span>Disabled<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button secondary"</span> <span class="hljs-attribute">disabled</span>&gt;</span>Disabled<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button success"</span> <span class="hljs-attribute">disabled</span>&gt;</span>Disabled<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
@@ -321,7 +340,9 @@
   <button type="button" class="button success" disabled>Disabled</button>
   <button type="button" class="button alert" disabled>Disabled</button>
   <button type="button" class="button warning" disabled>Disabled</button>
-</div></div><h3>Clear Buttons</h3><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-wrapper"</span>&gt;</span>
+</div></div><h3 class="margin-bottom-s margin-top-s">Clear Buttons</h3>
+
+<div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-wrapper"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"clear button"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Primary<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"clear button secondary"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Secondary<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"clear button success"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Success<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
@@ -335,7 +356,9 @@
   <a class="clear button success" href="#">Success</a>
   <a class="clear button alert" href="#">Alert</a>
   <a class="clear button warning" href="#">Warning</a>
-</div></div><h3>Square Buttons</h3><p>Sqaure buttons are generated from <code>icon-{icon-name}.svg</code> files defined in <code>_settingsCustom.scss</code> defining global touch size, and each icon size in icons map</p>
+</div></div><h3 class="margin-bottom-s margin-top-s">Square Buttons</h3>
+
+<p>Square buttons are generated from <code>icon-{icon-name}.svg</code> files defined in <code>_settingsCustom.scss</code> defining global touch size, and each icon size in icons map</p>
 <div class="ss-code"><pre><code class="scss"><span class="hljs-variable">$square-button-size</span><span class="hljs-value">: <span class="hljs-number">44px</span>;</span>
 <span class="hljs-variable">$square-button-icons</span><span class="hljs-value">: (
   <span class="hljs-string">'icon-close'</span>: (<span class="hljs-string">'name'</span>: icon-close-<span class="hljs-number">24</span>, <span class="hljs-string">'color'</span>: <span class="hljs-variable">$gray-50</span>, <span class="hljs-string">'hover-color'</span>: <span class="hljs-variable">$black</span>),
@@ -350,10 +373,10 @@
 <div class="ss-code-live"><div class="input-wrapper">
   <a class="square-button icon-close" href="#"><span class="show-for-sr">Button</span></a>
   <a class="square-button icon-close-small" href="#"><span class="show-for-sr">Button</span></a>
-</div></div>
-            </section>
-            <section class="ss-section" id="buttons-groups">
-              <h1>Buttons Groups</h1><h3>Coloring</h3><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-wrapper"</span>&gt;</span>
+</div></div><p><h1 class="margin-bottom-s">Buttons Groups</h1></p>
+<h3 class="margin-bottom-s">Coloring</h3>
+
+<div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-wrapper"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button-group"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"secondary button"</span>&gt;</span>View<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"success button"</span>&gt;</span>Edit<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
@@ -369,7 +392,9 @@
     <a class="warning button">Share</a>
     <a class="alert button">Delete</a>
   </div>
-</div></div><h3>Equal widths</h3><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-wrapper"</span>&gt;</span>
+</div></div><h3 class="margin-bottom-s margin-top-s">Equal widths</h3>
+
+<div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-wrapper"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"expanded button-group"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button"</span>&gt;</span>Expanded<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button"</span>&gt;</span>Button<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
@@ -383,7 +408,8 @@
     <a class="button">Button</a>
     <a class="button">Group</a>
   </div>
-</div></div><h3>Stacked (from medium down)</h3><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-wrapper"</span>&gt;</span>
+</div></div><p><h3 class="margin-bottom-s margin-top-s">Stacked (from medium down)</h3></p>
+<div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-wrapper"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"stacked-for-medium button-group"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button"</span>&gt;</span>How<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button"</span>&gt;</span>Low<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
@@ -401,7 +427,8 @@
     <a class="button">You</a>
     <a class="button">Go</a>
   </div>
-</div></div><h3>Sizing</h3><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-wrapper"</span>&gt;</span>
+</div></div><p><h3 class="margin-bottom-s margin-top-s">Sizing</h3></p>
+<div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-wrapper"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"small button-group"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button"</span>&gt;</span>Small<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button"</span>&gt;</span>Button<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
@@ -418,7 +445,9 @@
 </div></div>
             </section>
             <section class="ss-section" id="callouts">
-              <h1>Callouts</h1><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"callout"</span>&gt;</span>
+              <h1 class="margin-bottom-s margin-top-s">Callouts</h1>
+
+<div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"callout"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">h5</span>&gt;</span>This is a basic callout<span class="hljs-tag">&lt;/<span class="hljs-title">h5</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>It has an easy to override visual style, and is appropriately subdued.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>It's dangerous to go alone, take this.<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
@@ -480,7 +509,9 @@
   </div>
 </div>
 
-<h3>Closable Callouts</h3><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"callout alert"</span> <span class="hljs-attribute">data-closable</span>&gt;</span>
+<h3 class="margin-bottom-s margin-top-s">Closable Callouts</h3>
+
+<div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"callout alert"</span> <span class="hljs-attribute">data-closable</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">h5</span>&gt;</span>This is Important!<span class="hljs-tag">&lt;/<span class="hljs-title">h5</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>But when you're done reading it, click the close button in the corner to dismiss this alert.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>I'm using the default <span class="hljs-tag">&lt;<span class="hljs-title">code</span>&gt;</span>data-closable<span class="hljs-tag">&lt;/<span class="hljs-title">code</span>&gt;</span> parameters, and simply fade out.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
@@ -499,7 +530,9 @@
 </div></div>
             </section>
             <section class="ss-section" id="drilldown-menu-amp-off-canvas">
-              <h1>Drilldown menu &amp; Off-canvas</h1><div class="ss-code"><pre><code class="scss"><span class="hljs-variable">$close-section-height</span><span class="hljs-value">: <span class="hljs-function">get-side</span>(<span class="hljs-variable">$square-button-size</span>, top);</span>
+              <h1 class="margin-bottom-s">Drilldown menu &amp; Off-canvas</h1>
+
+<div class="ss-code"><pre><code class="scss"><span class="hljs-variable">$close-section-height</span><span class="hljs-value">: <span class="hljs-function">get-side</span>(<span class="hljs-variable">$square-button-size</span>, top);</span>
 <span class="hljs-variable">$drilldown-menu-font-size</span><span class="hljs-value">: (
   small: <span class="hljs-number">16px</span>
 );</span>
@@ -578,7 +611,9 @@
 <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span></code></pre></div>
             </section>
             <section class="ss-section" id="forms">
-              <h1>Forms</h1><p>Labels for inline, middle aligned inputs have new, responsive <code>.middle</code> class names depending on the grid breakpoint classes: <code>.middle-{screen-size-breakpoint}</code></p>
+              <h1 class="margin-bottom-s">Forms</h1>
+
+<p>Labels for inline, middle aligned inputs have new, responsive <code>.middle</code> class names depending on the grid breakpoint classes: <code>.middle-{screen-size-breakpoint}</code></p>
 <p>New Form elements settings added to <code>_customSettings.scss</code> under Forms section</p>
 <div class="ss-code"><pre><code class="scss"><span class="hljs-variable">$form-label-margin</span><span class="hljs-value">: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-function">rem-calc</span>(<span class="hljs-number">8</span>);</span>
 <span class="hljs-variable">$legend-font-size</span><span class="hljs-value">: <span class="hljs-variable">$form-label-font-size</span>;</span>
@@ -815,7 +850,9 @@
 </form></div>
             </section>
             <section class="ss-section" id="labels">
-              <h1>Labels</h1><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-wrapper"</span>&gt;</span>
+              <h1 class="margin-bottom-s">Labels</h1>
+
+<div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-wrapper"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"primary label"</span>&gt;</span>Primary Label<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"secondary label"</span>&gt;</span>Secondary Label<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"success label"</span>&gt;</span>Success Label<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
@@ -832,7 +869,9 @@
 </div></div>
             </section>
             <section class="ss-section" id="pagination">
-              <h1>Pagination</h1><p>Pagination settings are refactored and can be set up under Pagination section in <code>_customSettings.scss</code>. Bunch of new settings available:</p>
+              <h1 class="margin-bottom-s">Pagination</h1>
+
+<p>Pagination settings are refactored and can be set up under Pagination section in <code>_customSettings.scss</code>. Bunch of new settings available:</p>
 <div class="ss-code"><pre><code class="scss"><span class="hljs-variable">$pagination-margin</span><span class="hljs-value">: <span class="hljs-number">0</span>;</span>
 <span class="hljs-variable">$pagination-line-height</span><span class="hljs-value">: <span class="hljs-number">1</span>;</span>
 <span class="hljs-variable">$pagination-item-sizes</span><span class="hljs-value">: (
@@ -912,7 +951,9 @@
 </ul></div>
             </section>
             <section class="ss-section" id="progress-bar">
-              <h1>Progress bar</h1><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"secondary progress"</span> <span class="hljs-attribute">role</span>=<span class="hljs-value">"progressbar"</span> <span class="hljs-attribute">tabindex</span>=<span class="hljs-value">"0"</span> <span class="hljs-attribute">aria-valuenow</span>=<span class="hljs-value">"25"</span> <span class="hljs-attribute">aria-valuemin</span>=<span class="hljs-value">"0"</span> <span class="hljs-attribute">aria-valuetext</span>=<span class="hljs-value">"25 percent"</span> <span class="hljs-attribute">aria-valuemax</span>=<span class="hljs-value">"100"</span>&gt;</span>
+              <h1 class="margin-bottom-s">Progress bar</h1>
+
+<div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"secondary progress"</span> <span class="hljs-attribute">role</span>=<span class="hljs-value">"progressbar"</span> <span class="hljs-attribute">tabindex</span>=<span class="hljs-value">"0"</span> <span class="hljs-attribute">aria-valuenow</span>=<span class="hljs-value">"25"</span> <span class="hljs-attribute">aria-valuemin</span>=<span class="hljs-value">"0"</span> <span class="hljs-attribute">aria-valuetext</span>=<span class="hljs-value">"25 percent"</span> <span class="hljs-attribute">aria-valuemax</span>=<span class="hljs-value">"100"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"progress-meter"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width: 25%"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 
@@ -962,14 +1003,18 @@
   </span>
 </div>
 
-<h3>Native Progress</h3><p>As an alternative to our custom progress bar style, you can also opt to use the native <code>&lt;progress&gt;</code> element. It provides a more succinct way to create progress bars, but it&#39;s not supported in IE9, and some other older browsers. <a href="https://caniuse.com/#feat=progress">View <code>&lt;progress&gt;</code> element support.</a></p>
+<h3 class="margin-bottom-s margin-top-s">Native Progress</h3>
+
+<p>As an alternative to our custom progress bar style, you can also opt to use the native <code>&lt;progress&gt;</code> element. It provides a more succinct way to create progress bars, but it&#39;s not supported in IE9, and some other older browsers. <a href="https://caniuse.com/#feat=progress">View <code>&lt;progress&gt;</code> element support.</a></p>
 
 <div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">progress</span> <span class="hljs-attribute">max</span>=<span class="hljs-value">"100"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"75"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">progress</span>&gt;</span></code></pre></div>
 
 <div class="ss-code-live"><progress max="100" value="75"></progress></div>
             </section>
             <section class="ss-section" id="slider">
-              <h1>Slider</h1><p>This handy lil slider is perfect for setting specific values within a range.</p>
+              <h1 class="margin-bottom-s">Slider</h1>
+
+<p>This handy lil slider is perfect for setting specific values within a range.</p>
 <p>Customization can be done is <code>_customSettings.scss</code> under <em>Slider</em> section.</p>
 <div class="ss-code"><pre><code class="scss"><span class="hljs-variable">$slider-margin</span><span class="hljs-value">: <span class="hljs-number">18px</span> <span class="hljs-number">0</span>;</span> <span class="hljs-comment">//Form element height (40px) - slider line height (4px) divided by two (top/bottom margin)</span>
 <span class="hljs-variable">$slider-touch-color</span><span class="hljs-value">: <span class="hljs-variable">$primary-color</span>;</span>
@@ -1043,7 +1088,9 @@
 </div>
             </section>
             <section class="ss-section" id="tabs">
-              <h1>Tabs</h1><div class="grid-x grid-margin-x">
+              <h1 class="margin-bottom-s">Tabs</h1>
+
+<div class="grid-x grid-margin-x">
   <div class="cell small-12 input-wrapper">
     <ul class="tabs" data-tabs id="example-tabs">
       <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Tab 1</a></li>
@@ -1062,14 +1109,22 @@
 </div>
             </section>
             <section class="ss-section" id="the-grid">
-              <h1>The Grid</h1><p class="lead">Problem: You&#39;ve got tons of content, each needing different sized cells, and don&#39;t know how to quick and easily get it all done. Solution: The awesome XY grid!</p>
+              <h1 class="margin-bottom-s">The Grid</h1>
+
+<p class="lead">Problem: You&#39;ve got tons of content, each needing different sized cells, and don&#39;t know how to quick and easily get it all done. Solution: The awesome XY grid!</p>
 
 <hr>
-<h2>Overview</h2><p>The grid is built around two key elements: grid-x and cells. grid-container create a max-width and contain the grid, and cells create the final structure. Everything on your page that you don&#39;t give a specific structural style to should be within a grid-x or cell.</p>
+<h2 class="margin-bottom-s">Overview</h2>
+
+<p>The grid is built around two key elements: grid-x and cells. grid-container create a max-width and contain the grid, and cells create the final structure. Everything on your page that you don&#39;t give a specific structural style to should be within a grid-x or cell.</p>
 <hr>
-<h2>Nesting</h2><p>In the Grid you can nest cells down as far as you&#39;d like. Just embed grid-x inside cells and go from there. Each embedded grid-x can contain up to 12 cells.</p>
+<h2 class="margin-bottom-s">Nesting</h2>
+
+<p>In the Grid you can nest cells down as far as you&#39;d like. Just embed grid-x inside cells and go from there. Each embedded grid-x can contain up to 12 cells.</p>
 <hr>
-<h2>How to Use</h2><p>Using this framework is easy. Here&#39;s how your code will look when you use a series of <code>&lt;div&gt;</code> tags to create cells.</p>
+<h2 class="margin-bottom-s">How to Use</h2>
+
+<p>Using this framework is easy. Here&#39;s how your code will look when you use a series of <code>&lt;div&gt;</code> tags to create cells.</p>
 <div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"grid-x"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"small-6 medium-4 large-3 cell"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"small-6 medium-8 large-9 cell"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
@@ -1106,7 +1161,9 @@
 </div>
 
 <hr>
-<h2>Nesting grid-x</h2><p>In the Grid you can nest cells down as far as you&#39;d like. Just embed grid-x inside cells and go from there. Each embedded grid-x can contain up to 12 cells.</p>
+<h2 class="margin-bottom-s">Nesting grid-x</h2>
+
+<p>In the Grid you can nest cells down as far as you&#39;d like. Just embed grid-x inside cells and go from there. Each embedded grid-x can contain up to 12 cells.</p>
 <div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"grid-x"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"small-8 cell"</span>&gt;</span>8
     <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"grid-x"</span>&gt;</span>
@@ -1136,7 +1193,9 @@
 </div>
 
 <hr>
-<h2>Small Grid</h2><p>As you&#39;ve probably noticed in the examples above, you have access to a small, medium, and large grid. If you know that your grid structure will be the same for small devices as it will be on large devices, just use the small grid. You can override your small grid classes by adding medium or large grid classes.</p>
+<h2 class="margin-bottom-s">Small Grid</h2>
+
+<p>As you&#39;ve probably noticed in the examples above, you have access to a small, medium, and large grid. If you know that your grid structure will be the same for small devices as it will be on large devices, just use the small grid. You can override your small grid classes by adding medium or large grid classes.</p>
 <div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"grid-x"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"small-2 cell"</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"small-10 cell"</span>&gt;</span>10, last<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
@@ -1154,7 +1213,9 @@
 </div>
             </section>
             <section class="ss-section" id="colors">
-              <h1>Colors</h1><p class="lead">Below you can find the different values we created that support the primary color variable you can change at any time in <code>_settings.scss</code></p>
+              <h1 class="margin-bottom-s">Colors</h1>
+
+<p class="lead">Below you can find the different values we created that support the primary color variable you can change at any time in <code>_settings.scss</code></p>
 
 <hr>
 <div class="ss-code"><pre><code class="scss"><span class="hljs-variable">$foundation-palette</span><span class="hljs-value">: (
