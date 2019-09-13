@@ -5,13 +5,13 @@ import yargs         from 'yargs';
 import browser       from 'browser-sync';
 import gulp          from 'gulp';
 import panini        from 'panini';
-import rimraf        from 'rimraf';
 import sherpa        from 'style-sherpa';
 import yaml          from 'js-yaml';
 import fs            from 'fs';
 import webpackStream from 'webpack-stream';
 import webpack2      from 'webpack';
 import named         from 'vinyl-named';
+import del           from 'del';
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -48,7 +48,8 @@ function deploy() {
 // Delete the "dist" folder
 // This happens every time a build starts
 function clean(done) {
-  rimraf(PATHS.dist, done);
+  del.sync(PATHS.clear);
+  done();
 }
 
 // Copy files out of the assets folder
