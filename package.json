@@ -1,6 +1,6 @@
 {
   "name": "foundation-konstrukt",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Official ZURB Template for Foundation for Sites. Enhanced scss. Konstrukt version.",
   "main": "gulpfile.js",
   "scripts": {
