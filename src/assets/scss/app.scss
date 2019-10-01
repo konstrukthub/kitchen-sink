@@ -1,10 +1,11 @@
 @charset 'utf-8';
 
 @import 'settings';
-@import 'sassvg';
+@import '_sprite.scss';
+@import 'sasssvg-data';
 @import 'settingsCustom';
 @import 'foundation';
-@import 'motion-ui';
+@import 'motion-ui.scss';
 @import 'customAccordion';
 @import 'customButton';
 @import 'customCallouts';

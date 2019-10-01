@@ -130,27 +130,45 @@
 
   @if $pagination-arrows {
     @each $name, $props in $pagination-arrows-defs {
-      $icon-width: get-side(map-get(map-get($pagination-arrows-defs, $name), size), top);
+      $icon-width: get-side(map-get(map-get($pagination-arrows-defs, $name), size), right);
+      $icon-height: get-side(map-get(map-get($pagination-arrows-defs, $name), size), top);
       @each $intent, $value in $pagination-item-sizes {
         [data-whatintent='#{$intent}'] .pagination li.pagination-#{$name} {
           $bg-pos: get-side(map-get($value, 'inner-padding'), #{map-get($props, 'padding-side')}) + get-side(map-get($value, 'a-padding'), #{map-get($props, 'padding-side')});
-          background-image: sassvg(map-get($props, name), transparent, transparent, map-get($props, color));
-          background-position: center #{map-get($props, 'padding-side')} $bg-pos;
-          background-repeat: no-repeat;
-          background-size: map-get($props, size);
+
+          &::before {
+            pointer-events: none;
+            @extend %svg-#{map-get($props, 'name')};
+            content: '';
+            position: absolute;
+            #{map-get($props, 'padding-side')}: $bg-pos;
+            top: (get-side(map-get($value, 'size'), top) - $icon-height) / 2;
+            height: get-side(map-get($props, size), top);
+            width: get-side(map-get($props, size), right);
+          }
 
           &:hover {
-            background-image: sassvg(map-get($props, name), transparent, transparent, map-get($props, color-hover));
-            background-position: center #{map-get($props, 'padding-side')} $bg-pos;
-            background-repeat: no-repeat;
-            background-size: map-get($props, size);
+            &::before {
+              @extend %svg-#{map-get($props, 'hover')};
+            }
           }
 
           &.disabled {
-            background-image: sassvg(map-get($props, name), transparent, transparent, $pagination-item-color-disabled);
+            &::before {
+              @if map-has-key($props, disabled) {
+                @extend %svg-#{map-get($props, 'disabled')};
+              }
+            }
 
             &:hover {
-              background-image: sassvg(map-get($props, name), transparent, transparent, $pagination-item-color-disabled);
+              &::before {
+                @if map-has-key($props, disabled) {
+                  @extend %svg-#{map-get($props, 'disabled')};
+                }
+                @else {
+                  @extend %svg-#{map-get($props, 'name')};
+                }
+              }
             }
           }
 

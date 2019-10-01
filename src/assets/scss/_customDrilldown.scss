@@ -8,7 +8,7 @@
     &::before {
       @include vertical-center;
 
-      background-image: sassvg(map-get($defs, name), transparent, transparent, map-get($defs, color));
+      @extend %svg-#{map-get($defs, name)};
       content: '';
       height: get-side(map-get($defs, size), top);
       width: get-side(map-get($defs, size), left);
@@ -16,7 +16,7 @@
     }
 
     &:hover:before {
-      background-image: sassvg(map-get($defs, name), transparent, transparent, map-get($defs, color-hover));
+      @extend %svg-#{map-get($defs, hover)};
     }
 
   }
@@ -110,7 +110,7 @@
         &::before {
           @include vertical-center;
 
-          background-image: sassvg(map-get($defs, name), transparent, transparent, map-get($defs, color));
+          @extend %svg-#{map-get($defs, name)};
           content: '';
           height: get-side(map-get($defs, size), top);
           width: get-side(map-get($defs, size), left);
@@ -118,7 +118,7 @@
         }
 
         &:hover::before {
-          background-image: sassvg(map-get($defs, name), transparent, transparent, map-get($defs, color-hover));
+          @extend %svg-#{map-get($defs, hover)};
         }
       }
     }

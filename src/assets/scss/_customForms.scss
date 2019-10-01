@@ -291,12 +291,12 @@ $input-prefix-padding: 1rem !default;
 
   $checkbox-icons: (
     'checkbox': (
-      'default': ('name': icon-checkbox-16, 'size': 16px, 'color': $gray-50),
-      'checked': ('name': icon-checkbox-8, 'size': 8px, 'color': $primary-color, 'offset': 4px)
+      'default': ('name': icon-checkbox-16, 'size': 16px),
+      'checked': ('name': icon-checkbox-8, 'size': 8px, 'offset': 4px)
     ),
     'radio': (
-      'default': ('name': icon-radio-16, 'size': 16px, 'color': $gray-50),
-      'checked': ('name': icon-radio-8, 'size': 8px, 'color': $primary-color, 'offset': 4px),
+      'default': ('name': icon-radio-16, 'size': 16px),
+      'checked': ('name': icon-radio-8, 'size': 8px, 'offset': 4px),
     )
   ) !default;
 
@@ -308,6 +308,7 @@ $input-prefix-padding: 1rem !default;
 
         @if $state == 'default' {
           &:before {
+            @extend %svg-#{map-get($props, name)};
             content: '';
             #{$global-left}: 0;
             position: absolute;
@@ -315,12 +316,12 @@ $input-prefix-padding: 1rem !default;
             transform: translateY(-50%);
             width: get-side(map-get($props, 'size'), #{$global-left});
             height: get-side(map-get($props, 'size'), top);
-            background-image: sassvg(map-get($props, name), transparent, transparent, map-get($props, color));
           }
         }
 
         @else if($state == 'checked') {
           &:after {
+            @extend %svg-#{map-get($props, name)};
             content: '';
             #{$global-left}: get-side(map-get($props, 'offset'), left);
             position: absolute;
@@ -328,7 +329,6 @@ $input-prefix-padding: 1rem !default;
             transform: translateY(-50%);
             width: get-side(map-get($props, 'size'), #{$global-left});
             height: get-side(map-get($props, 'size'), top);
-            background-image: sassvg(map-get($props, name), map-get($props, color) );
             opacity: 0;
             transition: opacity $transition-speed-normal;
           }
@@ -369,7 +369,7 @@ $input-prefix-padding: 1rem !default;
   color: $input-color;
 
   @if $select-triangle-color != transparent {
-    background-image: sassvg(icon-down-12x6, $black);
+    background-image: inline-down-12x6();
     background-origin: content-box;
     background-position: $global-right (-(rem-calc(get-side($select-icon-size, #{$global-right})) + get-side($input-padding, #{$global-right}))) center;
     background-repeat: no-repeat;

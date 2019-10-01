@@ -1,3 +1,14 @@
+// Custom vals
+// -----------
+$custom-border-radius: 1px;
+
+$button-radius: $custom-border-radius;
+$select-radius: $custom-border-radius;
+$input-radius: $custom-border-radius;
+$pagination-radius: $custom-border-radius;
+$form-button-radius: $custom-border-radius;
+$progress-radius: $custom-border-radius;
+
 $container-widths: (
   small: rem-calc(1200),
   xxlarge: rem-calc(1440)
@@ -29,10 +40,10 @@ $p-sizes: (
 $heading-margin-ratio: 2;  // top:bottom
 
 //custom accordion
-//custom:
-$accordion-bg-img-size: 16px 26px; //24px default, 26x16 for arrows
-$accordion-icon-bg-img: $gray-50;
-$accordion-icon-bg-img-hover: $black;
+$custom-accordion-icons: (
+  'more': ('name': icon-down-26x16, 'hover': icon-down-hover-26x16),
+  'less': ('hover': icon-up-hover-26x16)
+);
 
 // custom button
 $custom-button-sizes: (
@@ -61,19 +72,16 @@ $square-button-size: 44px;
 
 // Icon buttons
 // icon name - svg icon to take from default - same as class name  + .svg
-// Size: size of icon in px, square sizes need only one value, other are width height default 24 x 24
+// Size: size of icon in px, square sizes need only one value, other are width height default 24 x 24, Note: height x width!!!
 // offset: distance from the center, auto for center default 'auto'
-// hover-color icon hover color, default $black
-// e.g. 'icon-close': ('name': icon-close-24, 'size': 24px 24px, 'offset': auto 10px auto auto, 'color': $gray-50)
+// hover: icon hover name
+// e.g. 'icon-close': ('name': icon-close-24, 'size': 24px 24px, 'offset': auto 10px auto auto, 'hover': icon-close-hover-24)
 $square-button-icons: (
-  'icon-close': ('name': icon-close-24, 'color': $gray-50, 'hover-color': $black),
-  'icon-close-callout': ('name': icon-close-24, 'offset': 20px 20px auto auto, 'color': $gray-50, 'hover-color': $black),
-  'icon-close-small': ('name': icon-close-12, 'size': 12px, 'color': $gray-50, 'hover-color': $black),
-  'icon-hamburger': ('name': icon-hamburger-20x14, 'size': 14px 20px, 'offset': auto auto auto 0, 'color': $gray-50, 'hover-color': $black)
+  'icon-close': ('name': icon-close-24, 'hover': icon-close-hover-24),
+  'icon-close-callout': ('name': icon-close-24, 'offset': 20px 20px auto auto, 'hover': icon-close-hover-24,),
+  'icon-close-small': ('name': icon-close-12, 'size': 12px, 'hover': icon-close-hover-12,),
+  'icon-hamburger': ('name': icon-hamburger-20x14, 'size': 14px 20px, 'offset': auto auto auto 0, 'hover': icon-hamburger-hover-20x14)
 ) !default;
-
-$button-icons-color: $dark-gray;
-$button-icons-hover-color: $black;
 
 // Offcanvas & Drilldown
 // ---------------------
@@ -86,8 +94,8 @@ $drilldown-item-color-hover: $drilldown-item-color;
 $drilldown-item-background-color: $drilldown-background;
 $drilldown-item-background-color-hover: $gray-20;
 $drilldown-arrows-defs: (
- prev : ('name' : icon-prev-10x14, 'size': 14px 10px, 'offset': auto 17px, 'color': $medium-gray, 'color-hover': $dark-gray),
- next : ('name' : icon-next-10x14, 'size': 14px 10px, 'offset': auto 17px, 'color': $medium-gray, 'color-hover': $dark-gray),
+ prev : ('name' : icon-drilldown-left-10x14, 'size': 14px 10px, 'offset': auto 17px, 'hover': icon-drilldown-left-hover-10x14),
+ next : ('name' : icon-drilldown-right-10x14, 'size': 14px 10px, 'offset': auto 17px, 'hover': icon-drilldown-right-hover-10x14),
 );
 
 // Forms
@@ -101,12 +109,12 @@ $form-checkbox-margin: 0 rem-calc(32) 0 0;
 $form-checkbox-label-padding: 0 0 0 rem-calc(24);
 $checkbox-icons: (
   'checkbox': (
-    'default': ('name': icon-checkbox-16, 'size': 16px, 'color': $gray-50),
-    'checked': ('name': icon-checkbox-8, 'size': 8px, 'color': $primary-color, 'offset': 4px)
+    'default': ('name': icon-checkbox-16, 'size': 16px),
+    'checked': ('name': icon-checkbox-8, 'size': 8px, 'offset': 4px)
   ),
   'radio': (
-    'default': ('name': icon-radio-16, 'size': 16px, 'color': $gray-50),
-    'checked': ('name': icon-radio-8, 'size': 8px, 'color': $primary-color, 'offset': 4px),
+    'default': ('name': icon-radio-16, 'size': 16px),
+    'checked': ('name': icon-radio-8, 'size': 8px, 'offset': 4px),
   )
 ) !default;
 
@@ -122,10 +130,10 @@ $pagination-item-sizes: (
   mouse: ('size' : 30px, 'a-padding': 0, 'li-margin': 0 2px, 'inner-padding': 0 7px)
 );
 $pagination-arrows-defs: (
-  next: ('name': icon-next-10x14, 'size': 10px 14px, 'color': $medium-gray, 'color-hover': $primary-color, 'padding-side': right, 'has-text': true),
-  previous: ('name': icon-prev-10x14, 'size': 10px 14px, 'color': $medium-gray, 'color-hover': $primary-color, 'padding-side': left, 'has-text': true),
-  first: ('name': icon-first-16x14, 'size': 16px 14px, 'color': $medium-gray, 'color-hover': $primary-color, 'padding-side': left, 'has-text': false),
-  last: ('name': icon-last-16x14, 'size': 16px 14px, 'color': $medium-gray, 'color-hover': $primary-color, 'padding-side': right, 'has-text': false)
+  next: ('name': icon-next-10x14, 'size': 14px 10px, 'hover': icon-next-hover-10x14, 'disabled': icon-next-disabled-10x14, 'padding-side': right),
+  previous: ('name': icon-prev-10x14, 'size': 14px 10px, 'hover': icon-prev-hover-10x14, 'disabled': icon-prev-disabled-10x14, 'padding-side': left),
+  first: ('name': icon-first-16x14, 'size': 14px 16px, 'disabled': icon-first-disabled-16x14, 'hover': icon-first-hover-16x14, 'padding-side': left),
+  last: ('name': icon-last-16x14, 'size': 14px 16px, 'disabled': icon-last-disabled-16x14, 'hover':icon-last-hover-16x14, 'padding-side': right)
 );
 $pagination-item-border: 1px solid $medium-gray;
 $pagination-item-border-color-hover: $primary-color;
@@ -139,13 +147,11 @@ $progress-meter-text-size: 14px;
 // Slider
 // ------
 $slider-margin: 18px 0;
-$slider-touch-color: $primary-color;
-$slider-touch-color-hover: scale-color($slider-touch-color, $lightness: -20%);
 $slider-vertical-height: 200px;
 
 $slider-sizes: (
-  touch: ('dragger-size': 44px 24px, 'icon-name': icon-slider-24x24, 'icon-size': 24px),
-  mouse: ('dragger-size' : 16px, 'icon-name': icon-slider-16x16, 'icon-size': 16px)
+  touch: ('dragger-size': 44px 24px, 'icon-name': icon-slider-24x24, 'hover': icon-slider-hover-24x24, 'icon-size': 24px),
+  mouse: ('dragger-size' : 16px, 'icon-name': icon-slider-16x16, 'hover': icon-slider-hover-16x16, 'icon-size': 16px)
 );
 
 // Spacings
@@ -196,14 +202,3 @@ $zindex: (
 $transition-speed-fast: 150ms;
 $transition-speed-normal: 350ms;
 $transition-speed-slow: 750ms;
-
-// Custom vals
-// -----------
-$custom-border-radius: 1px;
-
-$button-radius: $custom-border-radius;
-$select-radius: $custom-border-radius;
-$input-radius: $custom-border-radius;
-$pagination-radius: $custom-border-radius;
-$form-button-radius: $custom-border-radius;
-$progress-radius: $custom-border-radius;

@@ -68,76 +68,38 @@ $accordion-content-border: 1px solid $light-gray !default;
     background-color: $background-hover;
   }
 
-  @if $accordion-plusminus {
-    &:hover {
-      &::before {
-        background-image: sassvg('icon-plus-24', $accordion-icon-bg-img-hover);
-        height: get-side($accordion-bg-img-size, top);
-        width: get-side($accordion-bg-img-size, right);
-      }
+  $more-name: map-get(map-get($custom-accordion-icons, more), name);
+  $more-hover: map-get(map-get($custom-accordion-icons, more), hover);
+  $less-hover: map-get(map-get($custom-accordion-icons, less), hover);
 
-      .is-active > &::before {
-        background-image: sassvg('icon-minus-24', $accordion-icon-bg-img-hover);
-        content: '';
-        height: get-side($accordion-bg-img-size, top);
-        width: get-side($accordion-bg-img-size, right);
-      }
-    }
-
+  &:hover {
     &::before {
-      background-image: sassvg('icon-plus-24', $accordion-icon-bg-img);
-      height: get-side($accordion-bg-img-size, top);
-      width: get-side($accordion-bg-img-size, right);
-      position: absolute;
-      top: 50%;
-      #{$global-right}: get-side($padding, #{$global-right});
-      margin-top: 0;
-      content: '';
-      transform: translateY(-50%);
+      @extend %svg-#{$more-hover};
+      @extend %svg-#{$more-hover}-dims;
     }
 
     .is-active > &::before {
-      background-image: sassvg('icon-minus-24', $accordion-icon-bg-img-hover);
+      @extend %svg-#{$less-hover};
+      @extend %svg-#{$less-hover}-dims;
       content: '';
-      height: get-side($accordion-bg-img-size, top);
-      width: get-side($accordion-bg-img-size, right);
     }
   }
 
-  @else {
-    &:hover {
-      &::before {
-        height: get-side($accordion-bg-img-size, top);
-        width: get-side($accordion-bg-img-size, right);
-        background-image: sassvg('icon-down-26x16', $accordion-icon-bg-img-hover);
-      }
+  &::before {
+    @extend %svg-#{$more-name};
+    @extend %svg-#{$more-name}-dims;
+    position: absolute;
+    top: 50%;
+    #{$global-right}: get-side($padding, #{$global-right});
+    margin-top: 0;
+    content: '';
+    transform: translateY(-50%);
+  }
 
-      .is-active > &::before {
-        height: get-side($accordion-bg-img-size, top);
-        width: get-side($accordion-bg-img-size, right);
-        background-image: sassvg('icon-up-26x16', $accordion-icon-bg-img-hover);
-        content: '';
-      }
-    }
-
-    &::before {
-      height: get-side($accordion-bg-img-size, top);
-      width: get-side($accordion-bg-img-size, right);
-      background-image: sassvg('icon-down-26x16', $accordion-icon-bg-img);
-      position: absolute;
-      top: 50%;
-      #{$global-right}: get-side($padding, #{$global-right});
-      margin-top: 0;
-      content: '';
-      transform: translateY(-50%);
-    }
-
-    .is-active > &::before {
-      height: get-side($accordion-bg-img-size, top);
-      width: get-side($accordion-bg-img-size, right);
-      background-image: sassvg('icon-up-26x16', $accordion-icon-bg-img-hover);
-      content: '';
-    }
+  .is-active > &::before {
+    @extend %svg-#{$less-hover};
+    @extend %svg-#{$less-hover};
+    content: '';
   }
 }
 

@@ -114,11 +114,14 @@
 
       @if (has-value(map-get($value, icon-name))) and (map-get($value, icon-name) != none) {
         &:before {
-          background-image: sassvg(map-get($value, icon-name), $slider-touch-color);
+          @extend %svg-#{map-get($value, icon-name)};
+          //background-image: sassvg(map-get($value, icon-name), $slider-touch-color);
         }
 
         &:hover:before {
-          background-image: sassvg(map-get($value, icon-name), $slider-touch-color-hover);
+          @if map-has-key($value, hover) {
+            @extend %svg-#{map-get($value, hover)};
+          }
         }
       }
       @else {

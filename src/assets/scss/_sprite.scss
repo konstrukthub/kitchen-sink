@@ -1,0 +1,374 @@
+%svg-common {
+	background: url("../img/sprite.svg") no-repeat;
+}
+
+%svg-icon-checkbox-16 {
+	@extend %svg-common;
+	background-position: 0 0;
+}
+
+%svg-icon-checkbox-16-dims {
+	width: 16px;
+	height: 16px;
+}
+
+%svg-icon-checkbox-8 {
+	@extend %svg-common;
+	background-position: 0 2.7210884353741496%;
+}
+
+%svg-icon-checkbox-8-dims {
+	width: 8px;
+	height: 8px;
+}
+
+%svg-icon-close-12 {
+	@extend %svg-common;
+	background-position: 0 4.109589041095891%;
+}
+
+%svg-icon-close-12-dims {
+	width: 12px;
+	height: 12px;
+}
+
+%svg-icon-close-24 {
+	@extend %svg-common;
+	background-position: 0 6.293706293706293%;
+}
+
+%svg-icon-close-24-dims {
+	width: 24px;
+	height: 24px;
+}
+
+%svg-icon-close-hover-12 {
+	@extend %svg-common;
+	background-position: 0 10.273972602739725%;
+}
+
+%svg-icon-close-hover-12-dims {
+	width: 12px;
+	height: 12px;
+}
+
+%svg-icon-close-hover-24 {
+	@extend %svg-common;
+	background-position: 0 12.587412587412587%;
+}
+
+%svg-icon-close-hover-24-dims {
+	width: 24px;
+	height: 24px;
+}
+
+%svg-icon-down-26x16 {
+	@extend %svg-common;
+	background-position: 0 16.551724137931036%;
+}
+
+%svg-icon-down-26x16-dims {
+	width: 26px;
+	height: 16px;
+}
+
+%svg-icon-down-hover-26x16 {
+	@extend %svg-common;
+	background-position: 0 19.310344827586206%;
+}
+
+%svg-icon-down-hover-26x16-dims {
+	width: 26px;
+	height: 16px;
+}
+
+%svg-icon-drilldown-left-10x14 {
+	@extend %svg-common;
+	background-position: 0 21.993127147766323%;
+}
+
+%svg-icon-drilldown-left-10x14-dims {
+	width: 10px;
+	height: 14px;
+}
+
+%svg-icon-drilldown-left-hover-10x14 {
+	@extend %svg-common;
+	background-position: 0 24.398625429553263%;
+}
+
+%svg-icon-drilldown-left-hover-10x14-dims {
+	width: 10px;
+	height: 14px;
+}
+
+%svg-icon-drilldown-right-10x14 {
+	@extend %svg-common;
+	background-position: 0 26.804123711340207%;
+}
+
+%svg-icon-drilldown-right-10x14-dims {
+	width: 10px;
+	height: 14px;
+}
+
+%svg-icon-drilldown-right-hover-10x14 {
+	@extend %svg-common;
+	background-position: 0 29.209621993127147%;
+}
+
+%svg-icon-drilldown-right-hover-10x14-dims {
+	width: 10px;
+	height: 14px;
+}
+
+%svg-icon-first-16x14 {
+	@extend %svg-common;
+	background-position: 0 31.61512027491409%;
+}
+
+%svg-icon-first-16x14-dims {
+	width: 16px;
+	height: 14px;
+}
+
+%svg-icon-first-disabled-16x14 {
+	@extend %svg-common;
+	background-position: 0 34.02061855670103%;
+}
+
+%svg-icon-first-disabled-16x14-dims {
+	width: 16px;
+	height: 14px;
+}
+
+%svg-icon-first-hover-16x14 {
+	@extend %svg-common;
+	background-position: 0 36.42611683848797%;
+}
+
+%svg-icon-first-hover-16x14-dims {
+	width: 16px;
+	height: 14px;
+}
+
+%svg-icon-hamburger-20x14 {
+	@extend %svg-common;
+	background-position: 0 38.83161512027491%;
+}
+
+%svg-icon-hamburger-20x14-dims {
+	width: 20px;
+	height: 14px;
+}
+
+%svg-icon-hamburger-hover-20x14 {
+	@extend %svg-common;
+	background-position: 0 41.23711340206186%;
+}
+
+%svg-icon-hamburger-hover-20x14-dims {
+	width: 20px;
+	height: 14px;
+}
+
+%svg-icon-last-16x14 {
+	@extend %svg-common;
+	background-position: 0 43.6426116838488%;
+}
+
+%svg-icon-last-16x14-dims {
+	width: 16px;
+	height: 14px;
+}
+
+%svg-icon-last-disabled-16x14 {
+	@extend %svg-common;
+	background-position: 0 46.04810996563574%;
+}
+
+%svg-icon-last-disabled-16x14-dims {
+	width: 16px;
+	height: 14px;
+}
+
+%svg-icon-last-hover-16x14 {
+	@extend %svg-common;
+	background-position: 0 48.45360824742268%;
+}
+
+%svg-icon-last-hover-16x14-dims {
+	width: 16px;
+	height: 14px;
+}
+
+%svg-icon-minus-24 {
+	@extend %svg-common;
+	background-position: 0 51.74825174825175%;
+}
+
+%svg-icon-minus-24-dims {
+	width: 24px;
+	height: 24px;
+}
+
+%svg-icon-minus-hover-24 {
+	@extend %svg-common;
+	background-position: 0 55.94405594405595%;
+}
+
+%svg-icon-minus-hover-24-dims {
+	width: 24px;
+	height: 24px;
+}
+
+%svg-icon-next-10x14 {
+	@extend %svg-common;
+	background-position: 0 59.106529209621996%;
+}
+
+%svg-icon-next-10x14-dims {
+	width: 10px;
+	height: 14px;
+}
+
+%svg-icon-next-disabled-10x14 {
+	@extend %svg-common;
+	background-position: 0 61.512027491408936%;
+}
+
+%svg-icon-next-disabled-10x14-dims {
+	width: 10px;
+	height: 14px;
+}
+
+%svg-icon-next-hover-10x14 {
+	@extend %svg-common;
+	background-position: 0 63.91752577319588%;
+}
+
+%svg-icon-next-hover-10x14-dims {
+	width: 10px;
+	height: 14px;
+}
+
+%svg-icon-plus-24 {
+	@extend %svg-common;
+	background-position: 0 67.48251748251748%;
+}
+
+%svg-icon-plus-24-dims {
+	width: 24px;
+	height: 24px;
+}
+
+%svg-icon-plus-hover-24 {
+	@extend %svg-common;
+	background-position: 0 71.67832167832168%;
+}
+
+%svg-icon-plus-hover-24-dims {
+	width: 24px;
+	height: 24px;
+}
+
+%svg-icon-prev-10x14 {
+	@extend %svg-common;
+	background-position: 0 74.5704467353952%;
+}
+
+%svg-icon-prev-10x14-dims {
+	width: 10px;
+	height: 14px;
+}
+
+%svg-icon-prev-disabled-10x14 {
+	@extend %svg-common;
+	background-position: 0 76.97594501718213%;
+}
+
+%svg-icon-prev-disabled-10x14-dims {
+	width: 10px;
+	height: 14px;
+}
+
+%svg-icon-prev-hover-10x14 {
+	@extend %svg-common;
+	background-position: 0 79.38144329896907%;
+}
+
+%svg-icon-prev-hover-10x14-dims {
+	width: 10px;
+	height: 14px;
+}
+
+%svg-icon-radio-16 {
+	@extend %svg-common;
+	background-position: 0 82.06896551724138%;
+}
+
+%svg-icon-radio-16-dims {
+	width: 16px;
+	height: 16px;
+}
+
+%svg-icon-radio-8 {
+	@extend %svg-common;
+	background-position: 0 83.6734693877551%;
+}
+
+%svg-icon-radio-8-dims {
+	width: 8px;
+	height: 8px;
+}
+
+%svg-icon-slider-16x16 {
+	@extend %svg-common;
+	background-position: 0 86.20689655172414%;
+}
+
+%svg-icon-slider-16x16-dims {
+	width: 16px;
+	height: 16px;
+}
+
+%svg-icon-slider-24x24 {
+	@extend %svg-common;
+	background-position: 0 90.20979020979021%;
+}
+
+%svg-icon-slider-24x24-dims {
+	width: 24px;
+	height: 24px;
+}
+
+%svg-icon-slider-hover-16x16 {
+	@extend %svg-common;
+	background-position: 0 93.10344827586206%;
+}
+
+%svg-icon-slider-hover-16x16-dims {
+	width: 16px;
+	height: 16px;
+}
+
+%svg-icon-slider-hover-24x24 {
+	@extend %svg-common;
+	background-position: 0 97.2027972027972%;
+}
+
+%svg-icon-slider-hover-24x24-dims {
+	width: 24px;
+	height: 24px;
+}
+
+%svg-icon-up-hover-26x16 {
+	@extend %svg-common;
+	background-position: 0 100%;
+}
+
+%svg-icon-up-hover-26x16-dims {
+	width: 26px;
+	height: 16px;
+}
+

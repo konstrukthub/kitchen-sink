@@ -60,7 +60,7 @@
 //  55. Top Bar
 //  56. Xy Grid
 
-@import 'util/util';
+@import 'util/_util.scss';
 
 // 1. Global
 // ---------
@@ -766,7 +766,7 @@ $reveal-overlay-background: rgba($black, 0.45);
 // ----------
 
 $slider-width-vertical: rem-calc(4);
-$slider-transition: all 0.2s ease-in-out;
+$slider-transition: none;
 $slider-height: rem-calc(4);
 $slider-background: $light-gray;
 $slider-fill-background: $primary-color;

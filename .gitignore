@@ -6,4 +6,4 @@ dist
 *.swp
 .idea
 .publish
-_sassvg*.scss
+.tmp

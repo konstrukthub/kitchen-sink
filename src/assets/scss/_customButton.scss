@@ -9,17 +9,11 @@ $button-font-case: (
 
 $square-button-size: 50px !default;
 
-$button-icons-color: $dark-gray !default;
-
-$button-icons-hover-color: $black !default;
-
-// 'close': (name: 'bg-icon-close-24', size: 24px 24px, margin: default 10 default default)
+// 'close': (name: 'icon-close-24', size: 24px 24px, offset: default 10 default default, hover: 'icon-close-hover-24')
 @mixin button-icons {
   @each $name, $icon-defs in $square-button-icons {
     $height: 24px;
     $width: 24px;
-    $icons-color: $button-icons-color;
-    $icons-hover-color: $button-icons-hover-color;
     &.#{$name} {
       position: relative;
       &:before {
@@ -73,23 +67,14 @@ $button-icons-hover-color: $black !default;
           left: (get-side($square-button-size, right) - $width) / 2;
         }
 
-        @if map-has-key($icon-defs, color) {
-          $icons-color: map-get($icon-defs, color);
-        }
-
         @if map-has-key($icon-defs, name) {
-          background-image: sassvg(map-get($icon-defs, name), $icons-color);
+          @extend %svg-#{map-get($icon-defs, name)};
         }
       }
 
-      @if map-has-key($icon-defs, hover-color) {
+      @if map-has-key($icon-defs, hover) {
         &:hover:before {
-          background-image: sassvg(map-get($icon-defs, name),  map-get($icon-defs, hover-color));
-        }
-      }
-      @else {
-        &:hover:before {
-          background-image: sassvg(map-get($icon-defs, name),  map-get($icon-defs, $button-icons-hover-color));
+          @extend %svg-#{map-get($icon-defs, hover)};
         }
       }
     }
