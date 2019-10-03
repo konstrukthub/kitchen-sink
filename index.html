@@ -6,7 +6,7 @@
     <base href="https://konstrukthub.github.io/kitchen-sink/"/>
     <title>Style Guide | Konstrukt</title>
     
-    <link rel="stylesheet" href="main.f94fc.css"/>
+    <link rel="stylesheet" href="main.a34b1.css"/>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/color-brewer.min.css">
 
@@ -140,7 +140,6 @@
         </div>
 
         <div class="large-9 medium-8 cell">
-          [object Object]
             <section class="ss-section" id="base-typography">
               <h1 class="margin-bottom-s">Base Typography</h1>
 
@@ -191,11 +190,12 @@
             <section class="ss-section" id="accordion">
               <h1 class="margin-top-s margin-bottom-s">Accordion</h1>
 
-<p>Use accordion settings in <code>_settings.scss</code> to turn on/off plus/minus up/down arrows. </p>
-<div class="ss-code"><pre><code class="scss"><span class="hljs-variable">$accordion-plusminus</span><span class="hljs-value">: true;</span></code></pre></div><p>Also be aware that custom settings for accordions need to be set in <code>_settingsCustom.scss</code></p>
-<div class="ss-code"><pre><code class="scss"><span class="hljs-variable">$accordion-bg-img-size</span><span class="hljs-value">: <span class="hljs-number">16px</span> <span class="hljs-number">26px</span>;</span> <span class="hljs-comment">//24px default, 26x16 for arrows</span>
-<span class="hljs-variable">$accordion-icon-bg-img</span><span class="hljs-value">: <span class="hljs-variable">$gray-50</span>;</span>
-<span class="hljs-variable">$accordion-icon-bg-img-hover</span><span class="hljs-value">: <span class="hljs-variable">$black</span>;</span></code></pre></div><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"accordion"</span> <span class="hljs-attribute">data-accordion</span> <span class="hljs-attribute">data-allow-all-closed</span>=<span class="hljs-value">"true"</span>&gt;</span>
+<p>Use accordion settings in <code>_settings.scss</code> discarding <code>$accordion-plusminus</code> property, since we use sprites for icons. The icons are defined in <code>_settingsCustom.scss</code> as follows: </p>
+<div class="ss-code"><pre><code class="scss"><span class="hljs-variable">$custom-accordion-icons</span><span class="hljs-value">: (
+  <span class="hljs-string">'more'</span>: (<span class="hljs-string">'name'</span>: icon-down-<span class="hljs-number">26</span>x16, <span class="hljs-string">'hover'</span>: icon-down-hover-<span class="hljs-number">26</span>x16),
+  <span class="hljs-string">'less'</span>: (<span class="hljs-string">'hover'</span>: icon-up-hover-<span class="hljs-number">26</span>x16)
+);</span></code></pre></div><p>Note that <code>&#39;less&#39;</code> has only hover state, since it can be collapsed only when it is active</p>
+<div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"accordion"</span> <span class="hljs-attribute">data-accordion</span> <span class="hljs-attribute">data-allow-all-closed</span>=<span class="hljs-value">"true"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"accordion-item is-active"</span> <span class="hljs-attribute">data-accordion-item</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"accordion-title"</span>&gt;</span>Accordion 1<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"accordion-content"</span> <span class="hljs-attribute">data-tab-content</span>&gt;</span>
@@ -363,13 +363,21 @@
 </div></div><h3 class="margin-bottom-s margin-top-s">Square Buttons</h3>
 
 <p>Square buttons are generated from <code>icon-{icon-name}.svg</code> files defined in <code>_settingsCustom.scss</code> defining global touch size, and each icon size in icons map</p>
-<div class="ss-code"><pre><code class="scss"><span class="hljs-variable">$square-button-size</span><span class="hljs-value">: <span class="hljs-number">44px</span>;</span>
+<div class="ss-code"><pre><code class="scss"><span class="hljs-comment">// square button size width x height.</span>
+<span class="hljs-variable">$square-button-size</span><span class="hljs-value">: <span class="hljs-number">44px</span>;</span>
+
+<span class="hljs-comment">// Icon buttons</span>
+<span class="hljs-comment">// icon name - svg icon to take from default - same as class name  + .svg</span>
+<span class="hljs-comment">// Size: size of icon in px, square sizes need only one value, other are width height default 24 x 24, <span class="hljs-doctag">Note:</span> height x width!!!</span>
+<span class="hljs-comment">// offset: distance from the center, auto for center default 'auto'</span>
+<span class="hljs-comment">// hover: icon hover name</span>
+<span class="hljs-comment">// e.g. 'icon-close': ('name': icon-close-24, 'size': 24px 24px, 'offset': auto 10px auto auto, 'hover': icon-close-hover-24)</span>
 <span class="hljs-variable">$square-button-icons</span><span class="hljs-value">: (
-  <span class="hljs-string">'icon-close'</span>: (<span class="hljs-string">'name'</span>: icon-close-<span class="hljs-number">24</span>, <span class="hljs-string">'color'</span>: <span class="hljs-variable">$gray-50</span>, <span class="hljs-string">'hover-color'</span>: <span class="hljs-variable">$black</span>),
-  <span class="hljs-string">'icon-close-small'</span>: (<span class="hljs-string">'name'</span>: icon-close-<span class="hljs-number">12</span>, <span class="hljs-string">'size'</span>: <span class="hljs-number">12px</span>, <span class="hljs-string">'color'</span>: <span class="hljs-variable">$gray-50</span>, <span class="hljs-string">'hover-color'</span>: <span class="hljs-variable">$black</span>)
-);</span>
-<span class="hljs-variable">$button-icons-color</span><span class="hljs-value">: <span class="hljs-variable">$dark-gray</span>;</span>
-<span class="hljs-variable">$button-icons-hover-color</span><span class="hljs-value">: <span class="hljs-variable">$black</span>;</span></code></pre></div><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-wrapper"</span>&gt;</span>
+  <span class="hljs-string">'icon-close'</span>: (<span class="hljs-string">'name'</span>: icon-close-<span class="hljs-number">24</span>, <span class="hljs-string">'hover'</span>: icon-close-hover-<span class="hljs-number">24</span>),
+  <span class="hljs-string">'icon-close-callout'</span>: (<span class="hljs-string">'name'</span>: icon-close-<span class="hljs-number">24</span>, <span class="hljs-string">'offset'</span>: <span class="hljs-number">20px</span> <span class="hljs-number">20px</span> auto auto, <span class="hljs-string">'hover'</span>: icon-close-hover-<span class="hljs-number">24</span>,),
+  <span class="hljs-string">'icon-close-small'</span>: (<span class="hljs-string">'name'</span>: icon-close-<span class="hljs-number">12</span>, <span class="hljs-string">'size'</span>: <span class="hljs-number">12px</span>, <span class="hljs-string">'hover'</span>: icon-close-hover-<span class="hljs-number">12</span>,),
+  <span class="hljs-string">'icon-hamburger'</span>: (<span class="hljs-string">'name'</span>: icon-hamburger-<span class="hljs-number">20</span>x14, <span class="hljs-string">'size'</span>: <span class="hljs-number">14px</span> <span class="hljs-number">20px</span>, <span class="hljs-string">'offset'</span>: auto auto auto <span class="hljs-number">0</span>, <span class="hljs-string">'hover'</span>: icon-hamburger-hover-<span class="hljs-number">20</span>x14)
+);</span></code></pre></div><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-wrapper"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"square-button icon-close"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"show-for-sr"</span>&gt;</span>Button<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"square-button icon-close-small"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"show-for-sr"</span>&gt;</span>Button<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div>
@@ -545,8 +553,8 @@
 <span class="hljs-variable">$drilldown-item-background-color</span><span class="hljs-value">: <span class="hljs-variable">$drilldown-background</span>;</span>
 <span class="hljs-variable">$drilldown-item-background-color-hover</span><span class="hljs-value">: <span class="hljs-variable">$gray-20</span>;</span>
 <span class="hljs-variable">$drilldown-arrows-defs</span><span class="hljs-value">: (
-  prev : (<span class="hljs-string">'name'</span> : icon-prev-<span class="hljs-number">10</span>x14, <span class="hljs-string">'size'</span>: <span class="hljs-number">14px</span> <span class="hljs-number">10px</span>, <span class="hljs-string">'offset'</span>: auto <span class="hljs-number">17px</span>, <span class="hljs-string">'color'</span>: <span class="hljs-variable">$medium-gray</span>, <span class="hljs-string">'color-hover'</span>: <span class="hljs-variable">$dark-gray</span>),
-  next : (<span class="hljs-string">'name'</span> : icon-next-<span class="hljs-number">10</span>x14, <span class="hljs-string">'size'</span>: <span class="hljs-number">14px</span> <span class="hljs-number">10px</span>, <span class="hljs-string">'offset'</span>: auto <span class="hljs-number">17px</span>, <span class="hljs-string">'color'</span>: <span class="hljs-variable">$medium-gray</span>, <span class="hljs-string">'color-hover'</span>: <span class="hljs-variable">$dark-gray</span>),
+ prev : (<span class="hljs-string">'name'</span> : icon-drilldown-left-<span class="hljs-number">10</span>x14, <span class="hljs-string">'size'</span>: <span class="hljs-number">14px</span> <span class="hljs-number">10px</span>, <span class="hljs-string">'offset'</span>: auto <span class="hljs-number">17px</span>, <span class="hljs-string">'hover'</span>: icon-drilldown-left-hover-<span class="hljs-number">10</span>x14),
+ next : (<span class="hljs-string">'name'</span> : icon-drilldown-right-<span class="hljs-number">10</span>x14, <span class="hljs-string">'size'</span>: <span class="hljs-number">14px</span> <span class="hljs-number">10px</span>, <span class="hljs-string">'offset'</span>: auto <span class="hljs-number">17px</span>, <span class="hljs-string">'hover'</span>: icon-drilldown-right-hover-<span class="hljs-number">10</span>x14),
 );</span></code></pre></div><div class="grid-x grid-padding-x">
   <div class="input-wrapper">
     <button class="square-button icon-hamburger" data-toggle="offCanvas"><span class="show-for-sr">Hamburger</span></button>
@@ -628,14 +636,15 @@
 <span class="hljs-variable">$form-checkbox-label-padding</span><span class="hljs-value">: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-function">rem-calc</span>(<span class="hljs-number">24</span>);</span>
 <span class="hljs-variable">$checkbox-icons</span><span class="hljs-value">: (
   <span class="hljs-string">'checkbox'</span>: (
-    <span class="hljs-string">'default'</span>: (<span class="hljs-string">'name'</span>: icon-checkbox-<span class="hljs-number">16</span>, <span class="hljs-string">'size'</span>: <span class="hljs-number">16px</span>, <span class="hljs-string">'color'</span>: <span class="hljs-variable">$gray-50</span>),
-    <span class="hljs-string">'checked'</span>: (<span class="hljs-string">'name'</span>: icon-checkbox-<span class="hljs-number">8</span>, <span class="hljs-string">'size'</span>: <span class="hljs-number">8px</span>, <span class="hljs-string">'color'</span>: <span class="hljs-variable">$primary-color</span>, <span class="hljs-string">'offset'</span>: <span class="hljs-number">4px</span>)
+    <span class="hljs-string">'default'</span>: (<span class="hljs-string">'name'</span>: icon-checkbox-<span class="hljs-number">16</span>, <span class="hljs-string">'size'</span>: <span class="hljs-number">16px</span>),
+    <span class="hljs-string">'checked'</span>: (<span class="hljs-string">'name'</span>: icon-checkbox-<span class="hljs-number">8</span>, <span class="hljs-string">'size'</span>: <span class="hljs-number">8px</span>, <span class="hljs-string">'offset'</span>: <span class="hljs-number">4px</span>)
   ),
   <span class="hljs-string">'radio'</span>: (
-    <span class="hljs-string">'default'</span>: (<span class="hljs-string">'name'</span>: icon-radio-<span class="hljs-number">16</span>, <span class="hljs-string">'size'</span>: <span class="hljs-number">16px</span>, <span class="hljs-string">'color'</span>: <span class="hljs-variable">$gray-50</span>),
-    <span class="hljs-string">'checked'</span>: (<span class="hljs-string">'name'</span>: icon-radio-<span class="hljs-number">8</span>, <span class="hljs-string">'size'</span>: <span class="hljs-number">8px</span>, <span class="hljs-string">'color'</span>: <span class="hljs-variable">$primary-color</span>, <span class="hljs-string">'offset'</span>: <span class="hljs-number">4px</span>),
+    <span class="hljs-string">'default'</span>: (<span class="hljs-string">'name'</span>: icon-radio-<span class="hljs-number">16</span>, <span class="hljs-string">'size'</span>: <span class="hljs-number">16px</span>),
+    <span class="hljs-string">'checked'</span>: (<span class="hljs-string">'name'</span>: icon-radio-<span class="hljs-number">8</span>, <span class="hljs-string">'size'</span>: <span class="hljs-number">8px</span>, <span class="hljs-string">'offset'</span>: <span class="hljs-number">4px</span>),
   )
 );</span>
+
 <span class="hljs-variable">$select-icon-size</span><span class="hljs-value">: <span class="hljs-number">6px</span> <span class="hljs-number">12px</span>;</span>
 <span class="hljs-variable">$input-error-margin</span><span class="hljs-value">: <span class="hljs-number">8px</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>;</span></code></pre></div><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"grid-x grid-padding-x small-padding-collapse"</span> <span class="hljs-attribute">data-abide</span> <span class="hljs-attribute">novalidate</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"small-12 cell"</span>&gt;</span>
@@ -883,10 +892,10 @@
   mouse: (<span class="hljs-string">'size'</span> : <span class="hljs-number">30px</span>, <span class="hljs-string">'a-padding'</span>: <span class="hljs-number">0</span>, <span class="hljs-string">'li-margin'</span>: <span class="hljs-number">0</span> <span class="hljs-number">2px</span>, <span class="hljs-string">'inner-padding'</span>: <span class="hljs-number">0</span> <span class="hljs-number">7px</span>)
 );</span>
 <span class="hljs-variable">$pagination-arrows-defs</span><span class="hljs-value">: (
-  next: (<span class="hljs-string">'name'</span>: icon-next-<span class="hljs-number">10</span>x14, <span class="hljs-string">'size'</span>: <span class="hljs-number">10px</span> <span class="hljs-number">14px</span>, <span class="hljs-string">'color'</span>: <span class="hljs-variable">$medium-gray</span>, <span class="hljs-string">'color-hover'</span>: <span class="hljs-variable">$primary-color</span>, <span class="hljs-string">'padding-side'</span>: right, <span class="hljs-string">'has-text'</span>: true),
-  previous: (<span class="hljs-string">'name'</span>: icon-prev-<span class="hljs-number">10</span>x14, <span class="hljs-string">'size'</span>: <span class="hljs-number">10px</span> <span class="hljs-number">14px</span>, <span class="hljs-string">'color'</span>: <span class="hljs-variable">$medium-gray</span>, <span class="hljs-string">'color-hover'</span>: <span class="hljs-variable">$primary-color</span>, <span class="hljs-string">'padding-side'</span>: left, <span class="hljs-string">'has-text'</span>: true),
-  first: (<span class="hljs-string">'name'</span>: icon-first-<span class="hljs-number">16</span>x14, <span class="hljs-string">'size'</span>: <span class="hljs-number">16px</span> <span class="hljs-number">14px</span>, <span class="hljs-string">'color'</span>: <span class="hljs-variable">$medium-gray</span>, <span class="hljs-string">'color-hover'</span>: <span class="hljs-variable">$primary-color</span>, <span class="hljs-string">'padding-side'</span>: left, <span class="hljs-string">'has-text'</span>: false),
-  last: (<span class="hljs-string">'name'</span>: icon-last-<span class="hljs-number">16</span>x14, <span class="hljs-string">'size'</span>: <span class="hljs-number">16px</span> <span class="hljs-number">14px</span>, <span class="hljs-string">'color'</span>: <span class="hljs-variable">$medium-gray</span>, <span class="hljs-string">'color-hover'</span>: <span class="hljs-variable">$primary-color</span>, <span class="hljs-string">'padding-side'</span>: right, <span class="hljs-string">'has-text'</span>: false)
+  next: (<span class="hljs-string">'name'</span>: icon-next-<span class="hljs-number">10</span>x14, <span class="hljs-string">'size'</span>: <span class="hljs-number">14px</span> <span class="hljs-number">10px</span>, <span class="hljs-string">'hover'</span>: icon-next-hover-<span class="hljs-number">10</span>x14, <span class="hljs-string">'disabled'</span>: icon-next-disabled-<span class="hljs-number">10</span>x14, <span class="hljs-string">'padding-side'</span>: right),
+  previous: (<span class="hljs-string">'name'</span>: icon-prev-<span class="hljs-number">10</span>x14, <span class="hljs-string">'size'</span>: <span class="hljs-number">14px</span> <span class="hljs-number">10px</span>, <span class="hljs-string">'hover'</span>: icon-prev-hover-<span class="hljs-number">10</span>x14, <span class="hljs-string">'disabled'</span>: icon-prev-disabled-<span class="hljs-number">10</span>x14, <span class="hljs-string">'padding-side'</span>: left),
+  first: (<span class="hljs-string">'name'</span>: icon-first-<span class="hljs-number">16</span>x14, <span class="hljs-string">'size'</span>: <span class="hljs-number">14px</span> <span class="hljs-number">16px</span>, <span class="hljs-string">'disabled'</span>: icon-first-disabled-<span class="hljs-number">16</span>x14, <span class="hljs-string">'hover'</span>: icon-first-hover-<span class="hljs-number">16</span>x14, <span class="hljs-string">'padding-side'</span>: left),
+  last: (<span class="hljs-string">'name'</span>: icon-last-<span class="hljs-number">16</span>x14, <span class="hljs-string">'size'</span>: <span class="hljs-number">14px</span> <span class="hljs-number">16px</span>, <span class="hljs-string">'disabled'</span>: icon-last-disabled-<span class="hljs-number">16</span>x14, <span class="hljs-string">'hover'</span>:icon-last-hover-<span class="hljs-number">16</span>x14, <span class="hljs-string">'padding-side'</span>: right)
 );</span>
 <span class="hljs-variable">$pagination-item-border</span><span class="hljs-value">: <span class="hljs-number">1px</span> solid <span class="hljs-variable">$medium-gray</span>;</span>
 <span class="hljs-variable">$pagination-item-border-color-hover</span><span class="hljs-value">: <span class="hljs-variable">$primary-color</span>;</span>
@@ -1020,14 +1029,12 @@
 
 <p>This handy lil slider is perfect for setting specific values within a range.</p>
 <p>Customization can be done is <code>_customSettings.scss</code> under <em>Slider</em> section.</p>
-<div class="ss-code"><pre><code class="scss"><span class="hljs-variable">$slider-margin</span><span class="hljs-value">: <span class="hljs-number">18px</span> <span class="hljs-number">0</span>;</span> <span class="hljs-comment">//Form element height (40px) - slider line height (4px) divided by two (top/bottom margin)</span>
-<span class="hljs-variable">$slider-touch-color</span><span class="hljs-value">: <span class="hljs-variable">$primary-color</span>;</span>
-<span class="hljs-variable">$slider-touch-color-hover</span><span class="hljs-value">: <span class="hljs-function">scale-color</span>(<span class="hljs-variable">$slider-touch-color</span>, <span class="hljs-variable">$lightness</span>: -<span class="hljs-number">20%</span>);</span>
+<div class="ss-code"><pre><code class="scss"><span class="hljs-variable">$slider-margin</span><span class="hljs-value">: <span class="hljs-number">18px</span> <span class="hljs-number">0</span>;</span>
 <span class="hljs-variable">$slider-vertical-height</span><span class="hljs-value">: <span class="hljs-number">200px</span>;</span>
 
 <span class="hljs-variable">$slider-sizes</span><span class="hljs-value">: (
-  touch: (<span class="hljs-string">'dragger-size'</span>: <span class="hljs-number">44px</span> <span class="hljs-number">24px</span>, <span class="hljs-string">'icon-name'</span>: icon-slider-<span class="hljs-number">24</span>x24, <span class="hljs-string">'icon-size'</span>: <span class="hljs-number">24px</span>),
-  mouse: (<span class="hljs-string">'dragger-size'</span> : <span class="hljs-number">16px</span>, <span class="hljs-string">'icon-name'</span>: icon-slider-<span class="hljs-number">16</span>x16, <span class="hljs-string">'icon-size'</span>: <span class="hljs-number">16px</span>)
+  touch: (<span class="hljs-string">'dragger-size'</span>: <span class="hljs-number">44px</span> <span class="hljs-number">24px</span>, <span class="hljs-string">'icon-name'</span>: icon-slider-<span class="hljs-number">24</span>x24, <span class="hljs-string">'hover'</span>: icon-slider-hover-<span class="hljs-number">24</span>x24, <span class="hljs-string">'icon-size'</span>: <span class="hljs-number">24px</span>),
+  mouse: (<span class="hljs-string">'dragger-size'</span> : <span class="hljs-number">16px</span>, <span class="hljs-string">'icon-name'</span>: icon-slider-<span class="hljs-number">16</span>x16, <span class="hljs-string">'hover'</span>: icon-slider-hover-<span class="hljs-number">16</span>x16, <span class="hljs-string">'icon-size'</span>: <span class="hljs-number">16px</span>)
 );</span></code></pre></div><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"slider"</span> <span class="hljs-attribute">data-slider</span> <span class="hljs-attribute">data-initial-start</span>=<span class="hljs-value">"50"</span> <span class="hljs-attribute">data-end</span>=<span class="hljs-value">"200"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"slider-handle"</span>  <span class="hljs-attribute">data-slider-handle</span> <span class="hljs-attribute">role</span>=<span class="hljs-value">"slider"</span> <span class="hljs-attribute">tabindex</span>=<span class="hljs-value">"1"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"slider-fill"</span> <span class="hljs-attribute">data-slider-fill</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
@@ -1278,7 +1285,7 @@
     </div>
 
     
-    <script type="text/javascript" src="main.f94fc.js"></script>
+    <script type="text/javascript" src="main.a34b1.js"></script>
     
   </body>
 </html>
