@@ -180,6 +180,10 @@ $custom-spacing: (
   )
 );
 
+// creates helper margin-top and margin-bottom classes for defined breakpoints ($custom-margins-classes), with defined steps ($custom-margins). For instance `margin-top-medium-64`
+$custom-margins: 2, 4, 12, 16, 20, 24, 32, 40, 48, 56, 64, 72, 80, 120, 160, 240;
+$custom-margins-classes: $breakpoint-classes;
+
 // Tabs
 // ----
 $tab-item-background: $gray-10;

@@ -95,3 +95,19 @@
     }
   }
 }
+
+@mixin custom-margins($margins: $custom-margins, $classes: $custom-margins-classes) {
+  @each $size in $classes {
+    @include breakpoint($size) {
+      @each $margin in $margins {
+        .margin-bottom-#{$size}-#{$margin} {
+          margin-bottom: $margin#{px};
+        }
+
+        .margin-top-#{$size}-#{$margin} {
+          margin-top: $margin#{px};
+        }
+      }
+    }
+  }
+}

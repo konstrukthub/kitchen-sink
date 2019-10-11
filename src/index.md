@@ -1001,3 +1001,44 @@ $white: #ffffff;
 </div>
 
 
+
+<h1 class="margin-bottom-s">Helpers</h1>
+
+<p class="lead">Below you can find the different helper classes used for vertical separation, general spacings, etc.</p>
+
+<h2 class="margin-bottom-s margin-top-m">Vertical separators</h2>
+
+creates helper margin and padding classes for defined breakpoints `small, tablet-portrait, large`, with defined steps `xs s m l xm`. For instance `.margin-top-m`, `.padding-left-xs`, etc
+
+```scss
+$custom-spacing: (
+  small: (
+    'xs': rem-calc(8),
+    's': rem-calc(16),
+    'm': rem-calc(48),
+    'l': rem-calc(96),
+    'xl': rem-calc(144),
+  ),
+  tablet-portrait: (
+    'xs': rem-calc(8),
+    's': rem-calc(32),
+    'm': rem-calc(80),
+    'l': rem-calc(144),
+    'xl': rem-calc(192),
+  ),
+  large: (
+    'xs': rem-calc(8),
+    's': rem-calc(32),
+    'm': rem-calc(96),
+    'l': rem-calc(160),
+    'xl': rem-calc(240),
+  )
+);
+```
+
+creates helper margin-top and margin-bottom classes for defined breakpoints `$custom-margins-classes`, with defined steps `$custom-margins`. For instance `margin-top-medium-64`
+
+```scss
+$custom-margins: 2, 4, 12, 16, 20, 24, 32, 40, 48, 56, 64, 72, 80, 120, 160, 240;
+$custom-margins-classes: $breakpoint-classes;
+```

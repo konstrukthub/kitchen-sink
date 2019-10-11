@@ -1,5 +1,8 @@
 # Changelog
 
+## Version 2.1.0 (October 11, 2019)
+Added `@mixin custom-margins` to customSpacings, included `@include custom-margins;` in `app.css` and added new settings to `_settingsCustom.scss`
+
 ## Version 2.0.0 (October 1, 2019)
 
 Completely removed gulp. Switched to webpack + node.js
