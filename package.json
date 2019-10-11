@@ -1,21 +1,34 @@
 {
   "name": "foundation-konstrukt",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Official ZURB Template for Foundation for Sites. Enhanced scss. Konstrukt version. No Gulp - all in Webpack + Node",
   "main": "index.js",
   "watch": {
     "html": {
-      "patterns": ["src"],
-      "extensions": ["html", "md"],
+      "patterns": [
+        "src"
+      ],
+      "extensions": [
+        "html",
+        "md"
+      ],
       "silent": true
     },
     "sprite": {
-      "patterns": ["src/assets/svg/icons"],
-      "extensions": ["svg"]
+      "patterns": [
+        "src/assets/svg/icons"
+      ],
+      "extensions": [
+        "svg"
+      ]
     },
     "inlinesvg": {
-      "patterns": ["src/assets/svg/inline"],
-      "extensions": ["svg"]
+      "patterns": [
+        "src/assets/svg/inline"
+      ],
+      "extensions": [
+        "svg"
+      ]
     }
   },
   "scripts": {
@@ -49,7 +62,7 @@
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "copy-webpack-plugin": "^5.0.4",
-    "cross-env": "^5.2.1",
+    "cross-env": "^6.0.3",
     "css-loader": "^3.2.0",
     "del-cli": "^3.0.0",
     "eslint": "^6.4.0",

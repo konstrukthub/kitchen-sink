@@ -1,5 +1,8 @@
 # Changelog
 
+## Version 2.1.1 (October 11, 2019)
+update `cross-env` dev dependency to V6
+
 ## Version 2.1.0 (October 11, 2019)
 Added `@mixin custom-margins` to customSpacings, included `@include custom-margins;` in `app.css` and added new settings to `_settingsCustom.scss`
 
