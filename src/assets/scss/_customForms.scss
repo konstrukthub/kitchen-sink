@@ -150,6 +150,11 @@ $input-prefix-padding: 1rem !default;
 
     font-size: $input-font-size;
 
+    &:last-child {
+      border-bottom-right-radius: $input-radius;
+      border-top-right-radius: $input-radius;
+    }
+
     @if $global-flexbox {
       display: flex;
       flex: 0 0 auto;

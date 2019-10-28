@@ -101,11 +101,19 @@
     @include breakpoint($size) {
       @each $margin in $margins {
         .margin-bottom-#{$size}-#{$margin} {
-          margin-bottom: $margin#{px};
+          margin-bottom: unquote($margin+'px');
         }
 
         .margin-top-#{$size}-#{$margin} {
-          margin-top: $margin#{px};
+          margin-top: unquote($margin+'px');
+        }
+
+        .padding-bottom-#{$size}-#{$margin} {
+          padding-bottom: unquote($margin+'px');
+        }
+
+        .padding-top-#{$size}-#{$margin} {
+          padding-top: unquote($margin+'px');
         }
       }
     }
