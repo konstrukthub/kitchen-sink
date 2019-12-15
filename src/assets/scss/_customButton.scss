@@ -8,6 +8,7 @@ $button-font-case: (
 ) !default;
 
 $square-button-size: 50px !default;
+$button-responsive-expanded: false !default;
 
 // 'close': (name: 'icon-close-24', size: 24px 24px, offset: default 10 default default, hover: 'icon-close-hover-24')
 @mixin button-icons {
@@ -192,6 +193,29 @@ $square-button-size: 50px !default;
 
     &.expanded { @include button-expand; }
 
+    @if $button-responsive-expanded {
+      @each $size in $breakpoint-classes {
+        @include breakpoint(#{$size} only) {
+          &.#{$size}-only-expanded {
+            @include button-expand;
+          }
+        }
+        @if $size != $-zf-zero-breakpoint {
+          @include breakpoint(#{$size} down) {
+            &.#{$size}-down-expanded {
+              @include button-expand;
+            }
+          }
+
+          @include breakpoint(#{$size}) {
+            &.#{$size}-expanded {
+              @include button-expand;
+            }
+          }
+        }
+      }
+    }
+
     // Colors
     @each $name, $color in $button-palette {
       @if $button-fill != hollow {
@@ -214,12 +238,6 @@ $square-button-size: 50px !default;
     &.disabled,
     &[disabled] {
       @include button-disabled;
-
-      @each $name, $color in $button-palette {
-        &.#{$name} {
-          @include button-disabled($color, auto);
-        }
-      }
     }
 
     // Hollow style

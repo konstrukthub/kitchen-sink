@@ -1,6 +1,6 @@
 {
   "name": "foundation-konstrukt",
-  "version": "2.1.2",
+  "version": "2.2.1",
   "description": "Official ZURB Template for Foundation for Sites. Enhanced scss. Konstrukt version. No Gulp - all in Webpack + Node",
   "main": "index.js",
   "watch": {
@@ -48,7 +48,7 @@
     "last 2 versions"
   ],
   "dependencies": {
-    "foundation-sites": "^6.5.3",
+    "foundation-sites": "^6.6.1",
     "jquery": "^3.4.1",
     "motion-ui": "^2.0.3",
     "what-input": "^5.2.4"
@@ -61,7 +61,7 @@
     "@babel/register": "^7.6.2",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
-    "copy-webpack-plugin": "^5.0.4",
+    "copy-webpack-plugin": "^5.1.1",
     "cross-env": "^6.0.3",
     "css-loader": "^3.2.0",
     "del-cli": "^3.0.0",

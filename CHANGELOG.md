@@ -1,5 +1,15 @@
 # Changelog
 
+## Version 2.2.0 (December 15, 2019)
+Foundation version 6.6.1
+Fixed custom buttons disabled mixin
+
+## Version 2.2.0 (November 26, 2019)
+Responsive expanded buttons added
+
+## Version 2.1.2 (October 28, 2019)
+unquote px in custom-spacings, added padding
+
 ## Version 2.1.1 (October 11, 2019)
 update `cross-env` dev dependency to V6
 
