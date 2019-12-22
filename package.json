@@ -1,6 +1,6 @@
 {
   "name": "foundation-konstrukt",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "Official ZURB Template for Foundation for Sites. Enhanced scss. Konstrukt version. No Gulp - all in Webpack + Node",
   "main": "index.js",
   "watch": {

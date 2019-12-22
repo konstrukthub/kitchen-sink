@@ -1,6 +1,9 @@
 # Changelog
 
-## Version 2.2.0 (December 15, 2019)
+## Version 2.2.2 (December 22, 2019)
+Fixed button sizes on button-group
+
+## Version 2.2.1 (December 15, 2019)
 Foundation version 6.6.1
 Fixed custom buttons disabled mixin
 

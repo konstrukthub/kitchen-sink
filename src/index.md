@@ -210,7 +210,7 @@ $square-button-icons: (
 
 
 <h1 class="margin-bottom-s">Buttons Groups</h1>
-<h3 class="margin-bottom-s">Coloring</h3>
+<h3 class="margin-bottom-s">Coloring & Sizing</h3>
 
 ```html_example
 <div class="input-wrapper">
@@ -219,6 +219,14 @@ $square-button-icons: (
     <a class="success button">Edit</a>
     <a class="warning button">Share</a>
     <a class="alert button">Delete</a>
+  </div>
+</div>
+<div class="input-wrapper">
+  <div class="button-group">
+    <a class="secondary button small">View</a>
+    <a class="success button small">Edit</a>
+    <a class="warning button small">Share</a>
+    <a class="alert button small">Delete</a>
   </div>
 </div>
 ```
