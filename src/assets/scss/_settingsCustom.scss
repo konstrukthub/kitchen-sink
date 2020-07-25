@@ -117,6 +117,16 @@ $checkbox-icons: (
     'checked': ('name': icon-radio-8, 'size': 8px, 'offset': 4px),
   )
 ) !default;
+$disabled-checkbox-icons: (
+  'checkbox': (
+    'default': icon-checkbox-disabled-16,
+    'checked': icon-checkbox-disabled-8,
+  ),
+  'radio': (
+    'default': icon-radio-disabled-16,
+    'checked': icon-radio-disabled-8,
+  )
+) !default;
 
 $select-icon-size: 6px 12px;
 $input-error-margin: 8px 0 0;

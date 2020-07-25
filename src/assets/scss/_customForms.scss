@@ -302,11 +302,22 @@ $input-prefix-padding: 1rem !default;
   $checkbox-icons: (
     'checkbox': (
       'default': ('name': icon-checkbox-16, 'size': 16px),
-      'checked': ('name': icon-checkbox-8, 'size': 8px, 'offset': 4px)
+      'checked': ('name': icon-checkbox-8, 'size': 8px, 'offset': 4px),
     ),
     'radio': (
       'default': ('name': icon-radio-16, 'size': 16px),
       'checked': ('name': icon-radio-8, 'size': 8px, 'offset': 4px),
+    )
+  ) !default;
+  
+  $disabled-checkbox-icons: (
+    'checkbox': (
+      'default': icon-checkbox-disabled-16,
+      'checked': icon-checkbox-disabled-8,
+    ),
+    'radio': (
+      'default': icon-radio-disabled-16,
+      'checked': icon-radio-disabled-8,
     )
   ) !default;
 
@@ -352,6 +363,27 @@ $input-prefix-padding: 1rem !default;
       }
     }
 
+  }
+
+  @each $type, $states in $disabled-checkbox-icons {
+    [type='#{$type}'][disabled] + label {
+      position: relative;
+
+      @each $state, $props in $states {
+
+        @if $state == 'default' {
+          &:before {
+            @extend %svg-#{$props};
+          }
+        }
+
+        @else if($state == 'checked') {
+          &:after {
+            @extend %svg-#{$props};
+          }
+        }
+      }
+    }
   }
 
   // Normalize file input width

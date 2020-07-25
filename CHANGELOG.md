@@ -1,5 +1,20 @@
 # Changelog
 
+## Version 2.3.0 (July 25, 2020)
+Update disabled states for radio and checkbox buttons.
+Added now settings to `custom_settings.scss` with `$disabled-checkbox-icons` map
+Added to `assets/svg/icons`:
+ - icon-checkbox-disabled-8.svg
+ - icon-checkbox-disabled-16.svg
+ - icon-radio-disabled-8.svg
+ - icon-radio-disabled-16.svg
+
+## Version 2.2.4 (July 25, 2020)
+Security update dev dependencies
+
+## Version 2.2.3 (July 25, 2020)
+Security update dependencies
+
 ## Version 2.2.2 (December 22, 2019)
 Fixed button sizes on button-group
 

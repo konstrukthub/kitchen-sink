@@ -464,6 +464,16 @@ $checkbox-icons: (
     'checked': ('name': icon-radio-8, 'size': 8px, 'offset': 4px),
   )
 );
+$disabled-checkbox-icons: (
+  'checkbox': (
+    'default': icon-checkbox-disabled-16,
+    'checked': icon-checkbox-disabled-8,
+  ),
+  'radio': (
+    'default': icon-radio-disabled-16,
+    'checked': icon-radio-disabled-8,
+  )
+);
 
 $select-icon-size: 6px 12px;
 $input-error-margin: 8px 0 0;
@@ -534,7 +544,7 @@ $input-error-margin: 8px 0 0;
       <fieldset class="small-12 large-8 large-offset-4 cell">
         <legend>Choose Your Favorite</legend>
         <div class="form-control-wrapper">
-          <input type="radio" name="pokemon" value="Red" id="pokemonRed" required><label for="pokemonRed">Red</label>
+          <input type="radio" name="pokemon" value="Red" id="pokemonRed" checked disabled required><label for="pokemonRed">Red</label>
           <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Blue</label>
           <input type="radio" name="pokemon" value="Yellow" id="pokemonYellow"><label for="pokemonYellow">Yellow</label>
         </div>
