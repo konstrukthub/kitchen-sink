@@ -22,6 +22,19 @@ function getBaseHref() {
   return process.env.NODE_ENV === 'production' ? BASEHREF.prod : BASEHREF.dev
 }
 
+function getMinificationOptions() {
+  if (process.env.NODE_ENV === 'production') {
+    return {
+      collapseWhitespace: true,
+      removeComments: true,
+      removeScriptTypeAttributes: true,
+      useShortDoctype: true
+    }
+  } else {
+    return false;
+  }
+}
+
 module.exports = {
   entry: {
     main: path.join(__dirname, 'src', 'index.js')
@@ -116,7 +129,8 @@ module.exports = {
       inject: false,
       base: {
         href: getBaseHref()
-      }
+      },
+      minify: getMinificationOptions()
     })
   ]
 };
