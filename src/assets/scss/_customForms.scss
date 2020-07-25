@@ -277,7 +277,6 @@ $input-prefix-padding: 1rem !default;
     margin: 0;
     height: 0;
     width: 0;
-
   }
 
   // Styles for input/label siblings
@@ -292,6 +291,12 @@ $input-prefix-padding: 1rem !default;
     &[for] {
       cursor: pointer;
     }
+  }
+  
+  // styles for disabled radio/checkbox
+  [type='checkbox'][disabled] + label,
+  [type='radio'][disabled] + label {
+    cursor: $input-cursor-disabled;
   }
 
   $checkbox-icons: (
