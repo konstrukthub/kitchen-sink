@@ -1,4 +1,4 @@
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -38,12 +38,14 @@ module.exports = merge(common, {
 
 
   plugins: [
-    new CopyWebpackPlugin([
-      {
-        from: './src/assets/img',
-        to: './assets/img'
-      }
-    ]),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: './src/assets/img',
+          to: './assets/img'
+        }
+      ]
+    }),
 
     new MiniCssExtractPlugin({
       filename: '[name].css',
