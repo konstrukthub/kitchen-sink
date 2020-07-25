@@ -14,7 +14,7 @@ We have used custom mixinis to enhance default Foundation settings, and edit it 
 
 To use this template, your computer needs:
 
-- [NodeJS](https://nodejs.org/en/) (Version 10 >, Tested with 10.16.0)
+- [NodeJS](https://nodejs.org/en/) (Version 12 >, Tested with 12.18.0)
 - [Git](https://git-scm.com/)
 
 ## Usage
