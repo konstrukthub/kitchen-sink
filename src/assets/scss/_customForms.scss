@@ -122,7 +122,8 @@ $input-prefix-padding: 1rem !default;
     }
 
     > :last-child {
-      > * {
+      > *,
+      &.input-group-field {
         border-radius: if($global-text-direction == rtl, $input-radius 0 0 $input-radius, 0 $input-radius $input-radius 0);
       }
     }
@@ -292,7 +293,7 @@ $input-prefix-padding: 1rem !default;
       cursor: pointer;
     }
   }
-  
+
   // styles for disabled radio/checkbox
   [type='checkbox'][disabled] + label,
   [type='radio'][disabled] + label {
@@ -309,7 +310,7 @@ $input-prefix-padding: 1rem !default;
       'checked': ('name': icon-radio-8, 'size': 8px, 'offset': 4px),
     )
   ) !default;
-  
+
   $disabled-checkbox-icons: (
     'checkbox': (
       'default': icon-checkbox-disabled-16,

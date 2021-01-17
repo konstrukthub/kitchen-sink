@@ -1,4 +1,6 @@
 # Changelog
+## Version 2.3.1 (January 17, 2021)
+fix _customForms.scss border radius issue with input-form-group
 
 ## Version 2.3.0 (July 25, 2020)
 Update disabled states for radio and checkbox buttons.

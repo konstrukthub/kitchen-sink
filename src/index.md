@@ -524,6 +524,13 @@ $input-error-margin: 8px 0 0;
           </div>
         </div>
         <div class="input-wrapper">
+          <label>Input Label</label>
+          <div class="input-group">
+            <span class="input-group-label">https</span>
+            <input type="text" placeholder="small-9.cell" class="input-group-field" />
+          </div>
+        </div>
+        <div class="input-wrapper">
           <label>Password</label>
           <div class="input-with-icon">
             <input type="text" aria-describedby="input text">
