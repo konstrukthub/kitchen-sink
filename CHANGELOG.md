@@ -1,4 +1,10 @@
 # Changelog
+## Version 2.4.0 (November 22, 2021)
+Update Foundation to 6.7.4
+Fix security issues
+update jquery to 3.6
+update security issues with 3rd party
+
 ## Version 2.3.1 (January 17, 2021)
 fix _customForms.scss border radius issue with input-form-group
 
